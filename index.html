@@ -4,114 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agência Espacial da G&P, ainda em construção então é puramente acadêmico.">
     <title>G&P Agência Espacial</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
     <header>
-        <img src="Imagens/Logo header.png" alt="Logotipo G&P Agência Espacial">
+        <img src="Imagens/Logo.png" alt="Logotipo G&P Agência Espacial">
 
-        <nav>
+        <nav class="menu">
             <ul>
-                <li><a>Preço</a></li>
-                <li><a>Solução</a></li>
-                <li><a>Comunidade</a></li>
-                <li><a>Sobre nós</a></li>
+                <li><a id="preco" onclick="construcao();">Preço</a></li>
+                <li><a id="solucao" onclick="construcao();">Solução</a></li>
+                <li><a id="comunidade" onclick="construcao();">Comunidade</a></li>
+                <li><a id="sobre" onclick="construcao();">Sobre nós</a></li>
             </ul>
         </nav>
 
-        <nav>
+        <nav class="usuario">
             <ul>
-                <li><button type="button" id="login">Login</button></li>
-                <li><button type="button" id="cadastrar">Cadastrar</button></li>
+                <li><button type="button" id="login" onclick="construcao();">Login</button></li>
+                <li><button type="button" id="cadastrar" onclick="construcao();">Cadastrar</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>Fabricação de propulsores para grandes empresas espaciais.</section>
+        <section class="propulsores">Fabricação de propulsores para grandes empresas espaciais.</section>
 
-        <section>
+        <section class="newsletter">
             <h2>Receba as novidades sobre G&P Agência Espacial</h2>
-            <form>
-                <input type="email" placeholder="email@exemplo.com" class="newsletter">
-                <button type="submit" id="enviar">Enviar</button>
+            <form name="cadastro">
+                <input type="email" placeholder="email@exemplo.com" class="newsletter" name="email" id="email" autocomplete="off" required>
+                <button type="submit" id="enviar" onclick="enviaremail();">Enviar</button>
             </form>
         </section>
 
-        <section>
-            <h3>Nossa Equipe</h3>            
-            <p>
-                Nossa equipe é composta por profissionais dedicados e apaixonados pelo que fazem. Cada membro traz uma combinação única de habilidades e experiências que se 
-                complementam, formando um time forte e coeso. Valorizamos a colaboração, a inovação e o compromisso com a excelência em tudo o que fazemos. Juntos, enfrentamos 
-                desafios com criatividade e perseverança, sempre focados em alcançar os melhores resultados para nossos clientes e parceiros. Acreditamos que o sucesso é construído 
-                a partir de um trabalho em equipe sólido, onde cada voz é ouvida e cada ideia é valorizada. Estamos aqui para crescer juntos e fazer a diferença!
-            </p>
-            <aside><img src="Imagens/Imagem.png"></aside>                    
+        <section class="equipe">
+            <div class="texto">
+                <h3>Nossa Equipe</h3>            
+                <p>
+                    Nossa equipe é composta por profissionais dedicados e apaixonados pelo que fazem. Cada membro traz uma combinação única de habilidades e experiências que se 
+                    complementam, formando um time forte e coeso. Valorizamos a colaboração, a inovação e o compromisso com a excelência em tudo o que fazemos. Juntos, enfrentamos 
+                    desafios com criatividade e perseverança, sempre focados em alcançar os melhores resultados para nossos clientes e parceiros. Acreditamos que o sucesso é 
+                    construído a partir de um trabalho em equipe sólido, onde cada voz é ouvida e cada ideia é valorizada. Estamos aqui para crescer juntos e fazer a diferença!
+                </p>
+            </div>
+            <aside><img src="Imagens/Imagem.png" alt="Foto ilustrativa"></aside>                    
         </section>
         
-        <section>
-            <h3>Notícias</h3>
-            
-            <nav>
-                <figure>
-                    <img src="Imagens/Image.png">
-                    <figcaption>
-                        <h3>Foguetes</h3>
-                        Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
-                    </figcaption>
-                </figure>
+        <section class="noticias">
+            <nav class="artigos">
+                <h3 class="noticiastitulo">Notícias</h3>
+                <div class="l1">
+                    <figure>
+                        <img src="Imagens/Image.png" alt="Foguete">
+                        <figcaption>
+                            <h3>Foguetes</h3>
+                            Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
+                        </figcaption>
+                    </figure>
 
-                <figure>
-                    <img src="Imagens/Image-1.png">
-                    <figcaption>
-                        <h3>Nossos mecânicos</h3>
-                        Nossos mecânicos fazem o melhor para manter os motores funcionando durante os testes.
-                    </figcaption>
-                </figure>
+                    <figure>
+                        <img src="Imagens/Image-1.png" alt="Mecânico">
+                        <figcaption>
+                            <h3>Nossos mecânicos</h3>
+                            Nossos mecânicos fazem o melhor para manterem os motores funcionando durante os testes.
+                        </figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="Imagens/Image-2.png" alt="G&P Agência Espacial">
+                        <figcaption>
+                            <h3>Agência Espacial</h3>
+                            Junte-se conosco nesta viagem ao infinito e além.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="l2">
+                    <figure>
+                        <img src="Imagens/Image-3.png" alt="Física">
+                        <figcaption>
+                            <h3>História da Física</h3>
+                            Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e a lei da gravitação universal. 
+                            Seus trabalhos, especialmente<br>
+                            <a id="fisica" onclick="construcao();">Sobre mais...</a>
+                        </figcaption>
+                    </figure>
                 
-                <figure>
-                    <img src="Imagens/Image-2.png">
-                    <figcaption>
-                        <h3>Agência Espacial</h3>
-                        Junte-se conosco nesta viagem ao infinito e além.
-                    </figcaption>
-                </figure>
-            
-                <figure>
-                    <img src="Imagens/Image-3.png">
-                    <figcaption>
-                        <h3>História da Física</h3>
-                        Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e a lei da gravitação universal. 
-                        Seus trabalhos, especialmente<br>
-                        <a>Sobre mais...</a>
-                    </figcaption>
-                </figure>
-            
-                <figure>
-                    <img src="Imagens/Image-4.png">
-                    <figcaption>
-                        <h3>O Espaço</h3>
-                        O Espaço, como tudo nesse mundo é perfeito se fosse aleatorio teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
-                        Como que a matemática é<br>
-                        <a>Sobre mais...</a>
-                    </figcaption>
-                </figure>
+                    <figure>
+                        <img src="Imagens/Image-4.png" alt="Espaço">
+                        <figcaption>
+                            <h3>O Espaço</h3>
+                            O Espaço, como tudo nesse mundo é perfeito se fosse aleatorio teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
+                            Como que a matemática é<br>
+                            <a id="espaco" onclick="construcao();">Sobre mais...</a>
+                        </figcaption>
+                    </figure>
+                </div>
             </nav>
         </section>
     </main>
 
     <footer>
-        <img src="Imagens/Logo footer.png" alt="Logotipo G&P Agência Espacial">
+        <img src="Imagens/Logo.png" alt="Logotipo G&P Agência Espacial" class="logofooter">
         
-        <nav>
+        <nav class="redessociais">
             <ul>
-                <li><img src="Imagens/X Logo.png"></li>
-                <li><img src="Imagens/Logo Instagram.png"></li>
-                <li><img src="Imagens/Logo YouTube.png"></li>
-                <li><img src="Imagens/Logo LinkedIn.png"></li>
+                <li><a onclick="construcao();"><img src="Imagens/X Logo.png" alt="X"></a></li>
+                <li><a href="https://www.instagram.com/gepprojetosesistemas" target="_blank" aria-label="Instagram"><img src="Imagens/Logo Instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.youtube.com/GPProjetoseSistemas" target="_blank" aria-label="YouTube"><img src="Imagens/Logo YouTube.png" alt="YouTube"></a></li>
+                <li><a href="https://www.linkedin.com/company/g&p" target="_blank" aria-label="LinkedIn"><img src="Imagens/Logo LinkedIn.png" alt="LinkedIn"></a></li>
             </ul>
         </nav>
     </footer>
