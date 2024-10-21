@@ -268,7 +268,6 @@ nav.redessociais ul li a:hover {
         margin-bottom: 20px;
     }
 
-
     section.noticias nav.artigos div.l1 figure, section.noticias nav.artigos div.l2 figure {
         width: fit-content;
         height: fit-content;
@@ -310,7 +309,7 @@ nav.redessociais ul li a:hover {
         margin-left: 20px;
     }
 
-    section.noticias nav.artigos h3.noticiastitulo{
+    section.noticias nav.artigos h3.noticiastitulo {
         margin-left: 20px;
     }
 }
