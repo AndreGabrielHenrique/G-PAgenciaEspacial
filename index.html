@@ -16,17 +16,17 @@
 
         <nav class="menu">
             <ul>
-                <li><a id="preco" onclick="construcao();">Preço</a></li>
-                <li><a id="solucao" onclick="construcao();">Solução</a></li>
-                <li><a id="comunidade" onclick="construcao();">Comunidade</a></li>
-                <li><a id="sobre" onclick="construcao();">Sobre nós</a></li>
+                <li><a id="preco" onclick="construcao()">Preço</a></li>
+                <li><a id="solucao" onclick="construcao()">Solução</a></li>
+                <li><a id="comunidade" onclick="construcao()">Comunidade</a></li>
+                <li><a id="sobre" onclick="construcao()">Sobre nós</a></li>
             </ul>
         </nav>
 
         <nav class="usuario">
             <ul>
-                <li><button type="button" id="login" onclick="construcao();">Login</button></li>
-                <li><button type="button" id="cadastrar" onclick="construcao();">Cadastrar</button></li>
+                <li><button type="button" id="login" onclick="construcao()">Login</button></li>
+                <li><button type="button" id="cadastrar" onclick="construcao()">Cadastrar</button></li>
             </ul>
         </nav>
     </header>
@@ -36,9 +36,15 @@
 
         <section class="newsletter">
             <h2>Receba as novidades sobre G&P Agência Espacial</h2>
-            <form name="cadastro">
-                <input type="email" placeholder="email@exemplo.com" class="newsletter" name="email" id="email" autocomplete="off" required>
-                <button type="submit" id="enviar" onclick="enviaremail();">Enviar</button>
+            <form name="newsletter" id="newsletter">
+                <input type="email" placeholder="email@exemplo.com" class="email" name="email" id="email" autocomplete="off">
+                <button type="submit" id="enviar">Enviar</button>
+                <div id="fundoalerta" class="fundoalerta">
+                    <div class="alerta">
+                        <p class="fechar">&times;</p>
+                        <p class="aviso"></p>
+                    </div>
+                </div>
             </form>
         </section>
 
@@ -56,56 +62,54 @@
         </section>
         
         <section class="noticias">
-            <nav class="artigos">
-                <h3 class="noticiastitulo">Notícias</h3>
-                <div class="l1">
-                    <figure>
-                        <img src="Imagens/Image.png" alt="Foguete">
-                        <figcaption>
-                            <h3>Foguetes</h3>
-                            Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
-                        </figcaption>
-                    </figure>
+            <h3 class="noticiastitulo">Notícias</h3>
+            <div id="l1">
+                <figure class="l1">
+                <img src="Imagens/Image.png" alt="Foguete">
+                <figcaption>
+                    <h3>Foguetes</h3>
+                    Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
+                </figcaption>
+            </figure>
 
-                    <figure>
-                        <img src="Imagens/Image-1.png" alt="Mecânico">
-                        <figcaption>
-                            <h3>Nossos mecânicos</h3>
-                            Nossos mecânicos fazem o melhor para manterem os motores funcionando durante os testes.
-                        </figcaption>
-                    </figure>
-                    
-                    <figure>
-                        <img src="Imagens/Image-2.png" alt="G&P Agência Espacial">
-                        <figcaption>
-                            <h3>Agência Espacial</h3>
-                            Junte-se conosco nesta viagem ao infinito e além.
-                        </figcaption>
-                    </figure>
-                </div>
+            <figure class="l1">
+                <img src="Imagens/Image-1.png" alt="Mecânico">
+                <figcaption>
+                    <h3>Nossos mecânicos</h3>
+                    Nossos mecânicos fazem o melhor para manterem os motores funcionando durante os testes.
+                </figcaption>
+            </figure>
+            
+            <figure class="l1">
+                <img src="Imagens/Image-2.png" alt="G&P Agência Espacial">
+                <figcaption>
+                    <h3>Agência Espacial</h3>
+                    Junte-se conosco nesta viagem ao infinito e além.
+                </figcaption>
+            </figure>
+        </div>
 
-                <div class="l2">
-                    <figure>
-                        <img src="Imagens/Image-3.png" alt="Física">
-                        <figcaption>
-                            <h3>História da Física</h3>
-                            Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e a lei da gravitação universal. 
-                            Seus trabalhos, especialmente<br>
-                            <a id="fisica" onclick="construcao();">Sobre mais...</a>
-                        </figcaption>
-                    </figure>
-                
-                    <figure>
-                        <img src="Imagens/Image-4.png" alt="Espaço">
-                        <figcaption>
-                            <h3>O Espaço</h3>
-                            O Espaço, como tudo nesse mundo é perfeito se fosse aleatorio teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
-                            Como que a matemática é<br>
-                            <a id="espaco" onclick="construcao();">Sobre mais...</a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </nav>
+        <div id="l2">
+            <figure class="l2">
+                <img src="Imagens/Image-3.png" alt="Física">
+                <figcaption>
+                    <h3>História da Física</h3>
+                    Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e a lei da gravitação universal. 
+                    Seus trabalhos, especialmente<br>
+                    <a id="fisica" onclick="construcao()">Sobre mais...</a>
+                </figcaption>
+            </figure>
+        
+            <figure class="l2">
+                <img src="Imagens/Image-4.png" alt="Espaço">
+                <figcaption>
+                    <h3>O Espaço</h3>
+                    O Espaço, como tudo nesse mundo é perfeito se fosse aleatorio teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
+                    Como que a matemática é<br>
+                    <a id="espaco" onclick="construcao()">Sobre mais...</a>
+                </figcaption>
+            </figure>
+        </div>
         </section>
     </main>
 
@@ -114,7 +118,7 @@
         
         <nav class="redessociais">
             <ul>
-                <li><a onclick="construcao();"><img src="Imagens/X Logo.png" alt="X"></a></li>
+                <li><a onclick="construcao()"><img src="Imagens/X Logo.png" alt="X"></a></li>
                 <li><a href="https://www.instagram.com/gepprojetosesistemas" target="_blank" aria-label="Instagram"><img src="Imagens/Logo Instagram.png" alt="Instagram"></a></li>
                 <li><a href="https://www.youtube.com/GPProjetoseSistemas" target="_blank" aria-label="YouTube"><img src="Imagens/Logo YouTube.png" alt="YouTube"></a></li>
                 <li><a href="https://www.linkedin.com/company/g&p" target="_blank" aria-label="LinkedIn"><img src="Imagens/Logo LinkedIn.png" alt="LinkedIn"></a></li>

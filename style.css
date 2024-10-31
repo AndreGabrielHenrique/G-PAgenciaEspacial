@@ -1,44 +1,58 @@
-* {
+*
+{
     margin: 0;
     padding: 0;
 }
 
-body {
+body
+{
     font-family: Arial, sans-serif;
     place-items: center;
 }
 
-header {
-    padding: 20px;
+header
+{
+    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav.menu ul, nav.usuario ul, nav.redessociais ul {
+.menu ul, .usuario ul, .redessociais ul
+{
     list-style-type: none;
+    display: flex;
 }
 
-nav.menu ul li, nav.redessociais ul li {
-    display: inline;
+.menu ul li, .redessociais ul li
+{
     margin-right: 20px;
 }
 
-nav.menu ul li a:hover {
+.menu ul li a:hover
+{
     background-color: #D7D7D7;
     box-shadow: 0 0 0 0.50rem #D7D7D7;
     border-radius: 5px;
 }
 
-nav.menu ul li a:active, nav.redessociais ul li a:active {
+.menu ul li a:active, .redessociais ul li a:active
+{
     color: #767676;
 }
 
-nav.usuario ul li, main {
-    display: inline;
+.usuario ul li
+{
+    margin-right: 10px;
 }
 
-#login {
+.menu ul li:last-child, .redessociais ul li:last-child, .usuario ul li:last-child
+{
+    margin-right: 0;
+}
+
+#login
+{
     font-size: medium;
     padding: 10px 30px;
     background-color: #E3E3E3;
@@ -46,7 +60,8 @@ nav.usuario ul li, main {
     border-radius: 7px;
 }
 
-#cadastrar, #enviar {
+#cadastrar, #enviar
+{
     font-size: medium;
     color: white;
     padding: 10px 15px;
@@ -55,8 +70,9 @@ nav.usuario ul li, main {
     border-radius: 7px;
 }
 
-section.propulsores {
-    font-size: 52px;
+.propulsores
+{
+    font-size: 350%;
     font-weight: bold;
     color: white;
     background-image: url('Imagens/Fundo section.png');
@@ -67,128 +83,193 @@ section.propulsores {
     padding: 15%;
 }
 
-section.newsletter {
+.newsletter
+{
     text-align: center;
+    padding: 50px;
 }
 
-section.newsletter h2 {
-    margin-top: 50px;
+.newsletter h2
+{
     margin-bottom: 40px;
 }
 
-section.newsletter form {
-    margin-bottom: 50px;
-}
-
-input[type="email"] {
+input
+{
     padding: 10px;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
 }
 
-section.equipe {
-    display: inline-flex;
-    padding-inline: 330px;
-    padding-top: 70px;
+.fundoalerta
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
+    background-color: rgba(71, 57, 57, 0.349);
+}
+  
+.alerta
+{
+    color: #2C2C2C;
+    background-color: #E3E3E3;
+    margin: 15% auto;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #767676;
+    border-radius: 7px;
+    width: 50%;
+}
+
+.aviso
+{
+    font-size: 30px;
+}
+
+.aviso, .fechar
+{
+    font-weight: bold;
+}
+
+.fechar
+{
+    color: #2C2C2C;
+    float: inline-end;
+    font-size: 32px;
+}
+
+.fechar:hover, .fechar:focus
+{
+    color: #767676;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.equipe
+{
+    display: flex;
+    padding-inline: 120px;
+    padding-top: 30px;
     padding-bottom: 30px;
     background-color: #E3E3E3;    
 }
 
-section.equipe div.texto {
-    display: flex;
+.texto
+{
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
-section.equipe div.texto p {
+.texto p
+{
     margin-top: 24px;
     line-height: 23px;
 }
 
-section.equipe aside {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-section.noticias {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+.noticias
+{
+    flex-direction: row;
+    flex-flow: wrap;
     align-items: center;
+    padding: 40px;
+    padding-inline: 110px;
+    line-height: 22px;
 }
 
-section.noticias nav.artigos h3.noticiastitulo {
-    text-align: left;
-    margin-top: 50px;
+.noticiastitulo
+{
     margin-bottom: 40px;    
 }
 
-section.noticias nav.artigos {
-    line-height: 22px; 
-}
-
-section.noticias nav.artigos figure {
+.noticias figure
+{
     border: 1px solid transparent;
     border-color: #D9D9D9;
     border-radius: 5px;
+    width: 100%;
+    height: 100%;
 }
 
-section.noticias nav.artigos figure a {
+.noticias figure a
+{
     text-decoration: underline;
     color: #2C5EBF;
 }
 
-section.noticias nav.artigos figure a:hover {
+.noticias figure a:hover
+{
     text-decoration: underline;
     color: #767676;
 }
 
-section.noticias nav.artigos figure a:active {
+.noticias figure a:active
+{
     text-decoration: none;
     color: black;
 }
 
-section.noticias nav.artigos div.l1, section.noticias nav.artigos div.l2 {
-    display: flex;    
-    gap: 120px;
+.l1, .l2
+{
+    height: 100%;
+    width: 100%;
+    padding: 1%;
 }
 
-section.noticias nav.artigos div.l1 figure {
-    padding: 2%;
-    margin-bottom: 100px;
-    height: 267px;
-    width: 325.33px;
-}
-
-section.noticias nav.artigos div.l1 figure h3 {
-    padding-top: 14px;
-    padding-bottom: 7px;
-}
-
-section.noticias nav.artigos div.l2 figure {
+#l1
+{
     display: flex;
-    margin-bottom: 100px;
-    height: 162px;
-    width: 512px;
-    padding: 2%;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
-section.noticias nav.artigos div.l2 figure h3 {
-    padding-bottom: 7px;
+.l2
+{
+    display: flex;
 }
 
-section.noticias nav.artigos div.l2 figure img {
-    width: fit-content;
-    height: fit-content;
-    margin-right: 30px;
+#l2
+{
+    display: flex;
+    gap: 70px;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-footer {
-    padding: 20px;
+.l1 h3
+{
+    margin-top: 14px;
+    margin-bottom: 7px;
+}
+
+.l2 h3
+{
+    margin-bottom: 7px;
+}
+
+.l1 img, .l2 img
+{
+    height: 40%;
+    width: 40%;
+}
+
+.l2 img
+{
+    margin-right: 20px;
+}
+
+footer
+{
+    padding: 35px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -199,117 +280,196 @@ footer {
     border-color: #00000080;
 }
 
-footer img {
-    width: fit-content;
-    height: fit-content;
+.logofooter
+{
+    margin-top: 8px;
+    margin-bottom: 30px;
 }
 
-nav.redessociais ul li a:hover {
+.redessociais ul li a:hover
+{
     background-color: #D7D7D7;
     box-shadow: 0 0 0 1rem #D7D7D7;
     border-radius: 5px;
 }
 
-@media (max-width: 870px) {
-    header img, footer img.logofooter, section.equipe aside, section.noticias nav.artigos div.l1 figure img, section.noticias nav.artigos div.l2 figure img {
+@media (max-width: 500px)
+{
+    header img, .equipe aside, .l1 img, .l2 img
+    {
         display: none;
     }
 
-    header {
+    header
+    {
         display: flex;
         flex-direction: column;
         gap: 20px;
         text-align: center;
+        padding: 30px;    
     }
  
-    nav.menu ul li {
-        display: inline;
+    .menu ul li
+    {
         font-size: large;
     }
 
-    nav.usuario ul li {
+    .menu ul li, .usuario ul li
+    {
         display: inline;
     }
 
-    section.propulsores {
+    .propulsores
+    {
         padding: 9%;
+        font-size: 270%;
     }
 
-    section.newsletter {
+    .newsletter
+    {
         padding: 1px;
     }
 
-    section.newsletter h2 {
+    .newsletter h2
+    {
         margin-top: 20px;
         margin-bottom: 20px;
     }
     
-    section.newsletter form {
+    .newsletter form
+    {
         margin-bottom: 20px;
     }
     
-    input[type="email"] {
+    input
+    {
         padding: 14px;
     }
 
-    section.equipe {
+    .equipe, .noticias
+    {
         display: flex;
-        padding: 10px;
+        padding: 30px;
     }
 
-    section.noticias {
-        display: flex;
-        align-items: center;
+    .noticias figure
+    {
+        border: 0px;
     }
 
-    section.noticias nav.artigos h3.noticiastitulo {
-        margin: 10px;
-        margin-top: 20px;
+    .noticiastitulo, #l1, #l1 figure, #l2 figure 
+    {
         margin-bottom: 20px;
     }
 
-    section.noticias nav.artigos div.l1 figure, section.noticias nav.artigos div.l2 figure {
-        width: fit-content;
-        height: fit-content;
+    #l1, #l2
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
         border: none;
     }
 
-    section.noticias nav.artigos div.l1, section.noticias nav.artigos div.l2 {
-        display: flex;
-        flex-direction: column;
-        gap: 1px;
+    #l2 figure:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 800px)
+{
+    header
+    {
+        display: inline;
     }
 
-    section.noticias nav.artigos div.l1 figure, section.noticias nav.artigos div.l2 figure {
+    header img
+    {
+        margin: 37px 0px 0px 40px;
+        float: left;
+    }
+
+    .menu
+    {
+        margin-bottom: 20px;
+        font-size: 90%;
+    }
+
+    .menu, .usuario
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-right: 20px;
+    }
+
+    .propulsores
+    {
+        font-size: 310%;
+    }
+
+    .equipe
+    {
+        padding-inline: 30px;
+        flex-direction: column;
+    }
+
+    .texto
+    {
+        margin-bottom: 30px;
+    }
+
+    aside
+    {
+        text-align: center;
+    }
+
+    aside img
+    {
+        width: 100%;
+    }
+
+    .l1 h3
+    {
+        margin-top: 0;
+    }
+
+    .l1, .l2
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .l1 img
+    {
+        margin-right: 20px;
+    }
+
+    .l1 img, .l2 img
+    {
+        float: left;
+    }
+
+    .noticias figure
+    {
+        border: 0px;
+    }
+
+    .noticiastitulo, #l1, #l1 figure, #l2 figure 
+    {
         margin-bottom: 20px;
     }
 
-    footer {
+    #l1, #l2
+    {
         display: flex;
-    }    
-}
-
-@media (min-width: 871px) and (max-width: 1200px) {
-    section.equipe {
-        padding-inline: 30px;    
+        flex-direction: column;
+        gap: 0;
+        border: none;
     }
 
-    section.noticias nav.artigos div.l1, section.noticias nav.artigos div.l2 {
-        flex-wrap: wrap;
-    }
-}
-
-@media (min-width: 1201px) and (max-width: 1500px) {
-    section.equipe {
-        padding-inline: 80px;    
-    }
-
-    section.noticias nav.artigos div.l1, section.noticias nav.artigos div.l2 {
-        flex-wrap: wrap;
-        margin-left: 20px;
-    }
-
-    section.noticias nav.artigos h3.noticiastitulo {
-        margin-left: 20px;
+    #l2 figure:last-child
+    {
+        margin-bottom: 0;
     }
 }
