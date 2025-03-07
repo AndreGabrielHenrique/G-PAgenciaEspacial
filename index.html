@@ -36,12 +36,11 @@
 
         <section class="newsletter">
             <h2>Receba as novidades sobre G&P Agência Espacial</h2>
-            <form name="newsletter" id="newsletter">
-                <input type="email" placeholder="email@exemplo.com" class="email" name="email" id="email" autocomplete="off">
+            <form name="newsletter" id="newsletter" novalidate>
+                <input type="email" placeholder="email@exemplo.com" class="email" name="email" id="email">
                 <button type="submit" id="enviar">Enviar</button>
                 <div id="fundoalerta" class="fundoalerta">
                     <div class="alerta">
-                        <p class="fechar">&times;</p>
                         <p class="aviso"></p>
                     </div>
                 </div>
@@ -63,55 +62,65 @@
         
         <section class="noticias">
             <h3 class="noticiastitulo">Notícias</h3>
-            <div id="l1">
-                <figure class="l1">
-                <img src="Imagens/Image.png" alt="Foguete">
-                <figcaption>
-                    <h3>Foguetes</h3>
-                    Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
-                </figcaption>
-            </figure>
+            <div class="paineldenoticias">            
+              <div class="roldenoticias">
+                <div class="girarnoticias">
+                  <figure class="noticia ativa">
+                    <img src="Imagens/Image.png" alt="Foguete">
+                    <figcaption>
+                      <h3>Foguetes</h3>
+                      Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
+                    </figcaption>
+                  </figure>
 
-            <figure class="l1">
-                <img src="Imagens/Image-1.png" alt="Mecânico">
-                <figcaption>
-                    <h3>Nossos mecânicos</h3>
-                    Nossos mecânicos fazem o melhor para manterem os motores funcionando durante os testes.
-                </figcaption>
-            </figure>
-            
-            <figure class="l1">
-                <img src="Imagens/Image-2.png" alt="G&P Agência Espacial">
-                <figcaption>
-                    <h3>Agência Espacial</h3>
-                    Junte-se conosco nesta viagem ao infinito e além.
-                </figcaption>
-            </figure>
-        </div>
+                  <figure class="noticia">
+                    <img src="Imagens/Image-1.png" alt="Mecânico">
+                    <figcaption>
+                      <h3>Nossos mecânicos</h3>
+                      Nossos mecânicos fazem o melhor para manter os motores funcionando durante os testes.
+                    </figcaption>
+                  </figure>
 
-        <div id="l2">
-            <figure class="l2">
-                <img src="Imagens/Image-3.png" alt="Física">
-                <figcaption>
-                    <h3>História da Física</h3>
-                    Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e a lei da gravitação universal. 
-                    Seus trabalhos, especialmente<br>
-                    <a id="fisica" onclick="construcao()">Sobre mais...</a>
-                </figcaption>
-            </figure>
-        
-            <figure class="l2">
-                <img src="Imagens/Image-4.png" alt="Espaço">
-                <figcaption>
-                    <h3>O Espaço</h3>
-                    O Espaço, como tudo nesse mundo é perfeito se fosse aleatorio teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
-                    Como que a matemática é<br>
-                    <a id="espaco" onclick="construcao()">Sobre mais...</a>
-                </figcaption>
-            </figure>
-        </div>
-        </section>
-    </main>
+                  <figure class="noticia">
+                    <img src="Imagens/Image-2.png" alt="G&P Agência Espacial">
+                    <figcaption>
+                      <h3>Agência Espacial</h3>
+                      Junte-se conosco nesta viagem ao infinito e além.
+                    </figcaption>
+                  </figure>
+
+                  <figure class="noticia">
+                    <img src="Imagens/Image-3.png" alt="Física">
+                    <figcaption>
+                      <h3>História da Física</h3>
+                      Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e da gravitação universal.
+                      <a id="fisica" onclick="construcao()">Sobre mais...</a>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="noticia">
+                    <img src="Imagens/Image-4.png" alt="Espaço">
+                    <figcaption>
+                      <h3>O Espaço</h3>
+                      O Espaço, como tudo nesse mundo é perfeito...
+                      <a id="espaco" onclick="construcao()">Sobre mais...</a>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <button class="anterior">&#10094;</button>
+              <button class="proxima">&#10095;</button>
+              
+              <div class="noticiasindicadores">
+                <span class="apontarnoticia ativa" data-index="0"></span>
+                <span class="apontarnoticia" data-index="1"></span>
+                <span class="apontarnoticia" data-index="2"></span>
+                <span class="apontarnoticia" data-index="3"></span>
+                <span class="apontarnoticia" data-index="4"></span>
+              </div>
+            </div>
+          </section>
 
     <footer>
         <img src="Imagens/Logo.png" alt="Logotipo G&P Agência Espacial" class="logofooter">
