@@ -9,6 +9,7 @@ import react from '@vitejs/plugin-react-swc';
   - A seção resolve pode ser customizada conforme necessário.
 */
 export default defineConfig({
+  base: '/', // ou './' se necessário
   plugins: [react()],
   resolve: {}
 });
