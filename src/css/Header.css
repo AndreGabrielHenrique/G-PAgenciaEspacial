@@ -1,0 +1,83 @@
+/* ==========================
+   Estilos do Header (Cabeçalho)
+   ========================== */
+/*
+  header:
+    - Define o layout do cabeçalho com padding e Flexbox para distribuir os elementos horizontalmente.
+    - Permite quebra de linha se necessário e alinha os itens ao centro.
+  
+  .menu ul, .usuario ul, .redessociais ul:
+    - Remove marcadores de lista e exibe os itens em linha.
+  
+  .menu ul li, .redessociais ul li:
+    - Define espaçamento entre os itens.
+  
+  .menu ul li a:hover:
+    - Aplica um efeito de hover com background, box-shadow e bordas arredondadas.
+  
+  .menu ul li a:active, .redessociais ul li a:active:
+    - Define a cor do texto ao clicar.
+  
+  .usuario ul li:
+    - Define um espaçamento menor para itens de usuário.
+  
+  :last-child:
+    - Remove a margem do último item para evitar espaçamento extra.
+  
+  Media Query (max-width: 946px):
+    - Altera o layout para coluna, centraliza o texto e reduz o padding.
+    - Oculta a logo e aumenta o tamanho da fonte do menu.
+*/
+
+header {
+  padding: 40px; /* Espaçamento interno para melhor visualização */
+  display: flex; /* Layout flexível para distribuir os elementos */
+  flex-direction: row; /* Alinha os itens horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: space-between; /* Distribui os elementos uniformemente */
+}
+
+.menu ul, .usuario ul, .redessociais ul {
+  list-style-type: none; /* Remove marcadores padrão das listas */
+  display: flex; /* Exibe os itens em linha */
+}
+
+.menu ul li, .redessociais ul li {
+  margin-right: 20px; /* Espaço entre os itens */
+}
+
+.menu ul li a:hover {
+  background-color: #D7D7D7; /* Fundo ao passar o mouse */
+  box-shadow: 0 0 0 0.5rem #D7D7D7; /* Efeito de realce */
+  border-radius: 5px; /* Bordas arredondadas */
+}
+
+.menu ul li a:active, .redessociais ul li a:active {
+  color: #767676; /* Cor do texto ao clicar */
+}
+
+.usuario ul li {
+  margin-right: 10px; /* Espaçamento menor para itens de usuário */
+}
+
+.menu ul li:last-child, .redessociais ul li:last-child, .usuario ul li:last-child {
+  margin-right: 0; /* Remove margem do último item */
+}
+
+@media (max-width: 946px) {
+  header {
+    flex-direction: column; /* Alinha os elementos em coluna em telas pequenas */
+    gap: 20px; /* Espaçamento entre os elementos */
+    text-align: center; /* Centraliza o texto */
+    padding: 30px; /* Reduz o padding em telas pequenas */
+  }
+
+  header .logo {
+    display: none; /* Oculta a logo em telas pequenas */
+  }
+
+  .menu ul li {
+    font-size: large; /* Aumenta a fonte dos itens do menu */
+  }
+}

@@ -1,0 +1,41 @@
+/* Footer.css - Estilização do rodapé
+   ------------------------------------------------------------------
+   footer:
+     - Define o layout do rodapé com padding, disposição em coluna e centralização.
+     - Adiciona uma borda superior para separar visualmente o rodapé do conteúdo.
+   
+   footer .logo:
+     - Ajusta as margens da logo exibida no rodapé.
+   
+   .redessociais ul li a:hover:
+     - Aplica um efeito visual (background, box-shadow e border-radius) quando o usuário passa o mouse sobre os links das redes sociais.
+   
+   Media Query:
+     - Ajusta a margem superior do rodapé em telas menores.
+*/
+
+footer {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid #767676; /* Linha separadora */
+}
+
+footer .logo {
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.redessociais ul li a:hover {
+  background-color: #D7D7D7;
+  box-shadow: 0 0 0 1rem #D7D7D7;
+  border-radius: 5px;
+}
+
+@media (max-width: 946px) {
+  footer {
+    margin-top: 8px; /* Ajusta o margin-top para telas pequenas */
+  }
+}

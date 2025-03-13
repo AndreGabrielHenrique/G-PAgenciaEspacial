@@ -1,141 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agência Espacial da G&P, ainda em construção então é puramente acadêmico.">
+  <head>
+    <!-- Define a codificação de caracteres para UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Define o ícone da página (favicon) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Configura o viewport para responsividade, garantindo que a largura seja igual à largura do dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta descrição para SEO e informações sobre a página -->
+    <meta name="description" content="Agência Espacial da G&P, ainda em construção então é puramente acadêmico." />
+    <!-- Título da página exibido na aba do navegador -->
     <title>G&P Agência Espacial</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="shortcut icon" href="Imagens/favicon.ico">
-</head>
-
-<body>
-    <header>
-        <img src="Imagens/Logo.png" alt="Logotipo G&P Agência Espacial">
-
-        <nav class="menu">
-            <ul>
-                <li><a id="preco" onclick="construcao()">Preço</a></li>
-                <li><a id="solucao" onclick="construcao()">Solução</a></li>
-                <li><a id="comunidade" onclick="construcao()">Comunidade</a></li>
-                <li><a id="sobre" onclick="construcao()">Sobre nós</a></li>
-            </ul>
-        </nav>
-
-        <nav class="usuario">
-            <ul>
-                <li><button type="button" id="login" onclick="construcao()">Login</button></li>
-                <li><button type="button" id="cadastrar" onclick="construcao()">Cadastrar</button></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="propulsores">Fabricação de propulsores para grandes empresas espaciais.</section>
-
-        <section class="newsletter">
-            <h2>Receba as novidades sobre G&P Agência Espacial</h2>
-            <form name="newsletter" id="newsletter" novalidate>
-                <input type="email" placeholder="email@exemplo.com" class="email" name="email" id="email">
-                <button type="submit" id="enviar">Enviar</button>
-                <div id="fundoalerta" class="fundoalerta">
-                    <div class="alerta">
-                        <p class="aviso"></p>
-                    </div>
-                </div>
-            </form>
-        </section>
-
-        <section class="equipe">
-            <div class="texto">
-                <h3>Nossa Equipe</h3>            
-                <p>
-                    Nossa equipe é composta por profissionais dedicados e apaixonados pelo que fazem. Cada membro traz uma combinação única de habilidades e experiências que se 
-                    complementam, formando um time forte e coeso. Valorizamos a colaboração, a inovação e o compromisso com a excelência em tudo o que fazemos. Juntos, enfrentamos 
-                    desafios com criatividade e perseverança, sempre focados em alcançar os melhores resultados para nossos clientes e parceiros. Acreditamos que o sucesso é 
-                    construído a partir de um trabalho em equipe sólido, onde cada voz é ouvida e cada ideia é valorizada. Estamos aqui para crescer juntos e fazer a diferença!
-                </p>
-            </div>
-            <aside><img src="Imagens/Imagem.png" alt="Foto ilustrativa"></aside>                    
-        </section>
-        
-        <section class="noticias">
-            <h3 class="noticiastitulo">Notícias</h3>
-            <div class="paineldenoticias">            
-              <div class="roldenoticias">
-                <div class="girarnoticias">
-                  <figure class="noticia ativa">
-                    <img src="Imagens/Image.png" alt="Foguete">
-                    <figcaption>
-                      <h3>Foguetes</h3>
-                      Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
-                    </figcaption>
-                  </figure>
-
-                  <figure class="noticia">
-                    <img src="Imagens/Image-1.png" alt="Mecânico">
-                    <figcaption>
-                      <h3>Nossos mecânicos</h3>
-                      Nossos mecânicos fazem o melhor para manter os motores funcionando durante os testes.
-                    </figcaption>
-                  </figure>
-
-                  <figure class="noticia">
-                    <img src="Imagens/Image-2.png" alt="G&P Agência Espacial">
-                    <figcaption>
-                      <h3>Agência Espacial</h3>
-                      Junte-se conosco nesta viagem ao infinito e além.
-                    </figcaption>
-                  </figure>
-
-                  <figure class="noticia">
-                    <img src="Imagens/Image-3.png" alt="Física">
-                    <figcaption>
-                      <h3>História da Física</h3>
-                      Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e da gravitação universal.
-                      <a id="fisica" onclick="construcao()">Sobre mais...</a>
-                    </figcaption>
-                  </figure>
-
-                  <figure class="noticia">
-                    <img src="Imagens/Image-4.png" alt="Espaço">
-                    <figcaption>
-                      <h3>O Espaço</h3>
-                      O Espaço, como tudo nesse mundo é perfeito...
-                      <a id="espaco" onclick="construcao()">Sobre mais...</a>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-
-              <button class="anterior">&#10094;</button>
-              <button class="proxima">&#10095;</button>
-              
-              <div class="noticiasindicadores">
-                <span class="apontarnoticia ativa" data-index="0"></span>
-                <span class="apontarnoticia" data-index="1"></span>
-                <span class="apontarnoticia" data-index="2"></span>
-                <span class="apontarnoticia" data-index="3"></span>
-                <span class="apontarnoticia" data-index="4"></span>
-              </div>
-            </div>
-          </section>
-
-    <footer>
-        <img src="Imagens/Logo.png" alt="Logotipo G&P Agência Espacial" class="logofooter">
-        
-        <nav class="redessociais">
-            <ul>
-                <li><a onclick="construcao()"><img src="Imagens/X Logo.png" alt="X"></a></li>
-                <li><a href="https://www.instagram.com/gepprojetosesistemas" target="_blank" aria-label="Instagram"><img src="Imagens/Logo Instagram.png" alt="Instagram"></a></li>
-                <li><a href="https://www.youtube.com/GPProjetoseSistemas" target="_blank" aria-label="YouTube"><img src="Imagens/Logo YouTube.png" alt="YouTube"></a></li>
-                <li><a href="https://www.linkedin.com/company/g&p" target="_blank" aria-label="LinkedIn"><img src="Imagens/Logo LinkedIn.png" alt="LinkedIn"></a></li>
-            </ul>
-        </nav>
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
+  </head>
+  <body>
+    <!-- Div raiz onde o aplicativo React será renderizado -->
+    <div id="root"></div>
+    <!-- Script principal que inicia o aplicativo React (utilizando Vite) -->
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
 </html>

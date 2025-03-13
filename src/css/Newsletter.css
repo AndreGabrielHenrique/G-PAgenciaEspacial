@@ -1,0 +1,37 @@
+/* ==========================
+   Estilos da Newsletter
+   ========================== */
+/*
+  .newsletter:
+    - Centraliza o conteúdo e aplica padding para espaçamento.
+  
+  .newsletter h2:
+    - Adiciona margem inferior ao título para separá-lo do formulário.
+  
+  input:
+    - Estiliza os campos de entrada com padding, borda e arredondamento.
+  
+  input:focus:
+    - Exibe um outline para indicar que o campo está em foco.
+*/
+
+.newsletter {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 50px;      /* Espaçamento interno */
+  }
+  
+  .newsletter h2 {
+    margin-bottom: 40px; /* Espaço abaixo do título */
+  }
+  
+  input {
+    padding: 10px;              /* Espaçamento interno no input */
+    border: 1px solid #D9D9D9;  /* Borda com cor neutra */
+    border-radius: 5px;         /* Bordas arredondadas */
+    margin-right: 10px;         /* Espaço entre o input e o botão */
+  }
+  
+  input:focus {
+    outline: 1px solid #2C2C2C;  /* Exibe um contorno quando o input está em foco */
+  }
+  

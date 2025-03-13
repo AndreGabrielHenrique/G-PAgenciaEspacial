@@ -1,0 +1,56 @@
+/* Equipe.css - Estilização da seção sobre a equipe
+   ------------------------------------------------------------------
+   .equipe:
+     - Exibe a seção com layout flexível e aplica espaçamentos horizontais (padding-inline),
+       além de padding no topo e base.
+     - Define um fundo claro para destacar a área.
+   
+   .texto:
+     - Organiza o conteúdo textual em uma coluna usando Flexbox.
+   
+   .texto p:
+     - Adiciona margem superior e define a altura de linha para melhorar a legibilidade.
+   
+   .equipe aside:
+     - Exibe a imagem da equipe com largura automática.
+   
+   Media Queries:
+     - Em telas menores, oculta o aside (imagem) para otimizar o espaço.
+     - Em telas intermediárias, ajusta o padding da seção.
+*/
+
+.equipe {
+  display: flex;
+  padding-inline: 120px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #E3E3E3;
+}
+
+.texto {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.texto p {
+  margin-top: 24px;
+  line-height: 23px;
+}
+
+.equipe aside {
+  display: flex;
+  width: auto;
+}
+
+@media (max-width: 946px) {
+  .equipe aside {
+    display: none; /* Oculta a imagem da equipe em telas menores */
+  }
+}
+
+@media (min-width: 947px) and (max-width: 1335px) {
+  .equipe {
+    padding: 40px; /* Ajusta o padding para telas intermediárias */
+  }
+}
