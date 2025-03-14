@@ -10,8 +10,8 @@ import linkedinLogo from '../assets/Imagens/Logo LinkedIn.png';
 /*
   Componente Footer
   -----------------
-  - Renderiza o rodapé do site, incluindo a logo e os links das redes sociais.\n
-  - Cada link que não redireciona externamente chama window.construcao() para exibir o alerta global.
+  - Renderiza o rodapé do site, incluindo a logo e os links das redes sociais.
+  - Cada link que não redireciona externamente chama window.alerta() para exibir o alerta global.
 */
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
       <nav className="redessociais">
         <ul>
           <li>
-            <a onClick={() => window.construcao()}>
+            <a onClick={() => window.alerta()}>
               <img src={xLogo} alt="X" />
             </a>
           </li>

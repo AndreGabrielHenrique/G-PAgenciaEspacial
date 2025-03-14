@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react-swc';
 /*
   Arquivo vite.config.js
   -----------------------
-  - Configuração do Vite para o projeto React.\n
-  - Usa o plugin react-swc para transformar o JSX.\n
+  - Configuração do Vite para o projeto React.
+  - Usa o plugin react-swc para transformar o JSX.
   - A seção resolve pode ser customizada conforme necessário.
 */
 export default defineConfig({

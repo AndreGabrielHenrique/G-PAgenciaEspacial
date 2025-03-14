@@ -10,11 +10,11 @@ import espacoImg from "../assets/Imagens/Image-4.png";
 /*
   Componente Noticias
   --------------------
-  - Renderiza um carrossel de notícias composto por várias figuras.\n
-  - Cada figura contém uma imagem, um título e uma breve descrição.\n
-  - O hook useNoticiasCarousel gerencia a navegação, centralização e loop automático do carrossel.\n
-  - Os botões de navegação e os indicadores (pontos) permitem o controle manual do carrossel.\n
-  - Links (como \"Sobre mais...\") chamam window.construcao() para exibir um alerta informando que a funcionalidade está em construção.
+  - Renderiza um carrossel de notícias composto por várias figuras.
+  - Cada figura contém uma imagem, um título e uma breve descrição.
+  - O hook useNoticiasCarousel gerencia a navegação, centralização e loop automático do carrossel.
+  - Os botões de navegação e os indicadores (pontos) permitem o controle manual do carrossel.
+  - Links (como \"Sobre mais...\") chamam window.alerta() para exibir um alerta informando que a funcionalidade está em construção.
 */
 const Noticias = () => {
   useNoticiasCarousel();
@@ -50,16 +50,18 @@ const Noticias = () => {
               <img src={fisicaImg} alt="Física" />
               <figcaption>
                 <h3>História da Física</h3>
-                Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e da gravitação universal.
-                <a id="fisica" onClick={() => window.construcao()}>Sobre mais...</a>
+                Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e da gravitação universal. 
+                Seus trabalhos, especialmente
+                <a id="fisica" onClick={() => window.alerta()}>Sobre mais...</a>
               </figcaption>
             </figure>
             <figure className="noticia">
               <img src={espacoImg} alt="Espaço" />
               <figcaption>
                 <h3>O Espaço</h3>
-                O Espaço, como tudo nesse mundo é perfeito...
-                <a id="espaco" onClick={() => window.construcao()}>Sobre mais...</a>
+                O Espaço, como tudo nesse mundo é perfeito se fosse aleatório teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
+                Como que a matemática é
+                <a id="espaco" onClick={() => window.alerta()}>Sobre mais...</a>
               </figcaption>
             </figure>
           </div>

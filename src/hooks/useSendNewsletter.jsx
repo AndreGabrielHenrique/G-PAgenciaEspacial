@@ -6,7 +6,7 @@ import { useRef } from 'react';
   - Cria uma referência para o formulário da newsletter.
   - Define funções para validar o e-mail e para processar o envio.
   - Usa uma expressão regular corrigida para validar o e-mail.
-  - Dependendo do resultado da validação, chama window.construcao() com a mensagem apropriada para exibir o alerta global.
+  - Dependendo do resultado da validação, chama window.alerta() com a mensagem apropriada para exibir o alerta global.
   - A função handleSubmit previne o comportamento padrão do formulário e chama a função de envio.
 */
 function useSendNewsletter() {
@@ -17,18 +17,18 @@ function useSendNewsletter() {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})|(([a-zA-Z0-9\\-]+\.)+[a-zA-Z]{2,}))$/.test(email);
   };
 
-  // Função que processa o envio do e-mail e chama window.construcao com a mensagem apropriada.
+  // Função que processa o envio do e-mail e chama window.alerta com a mensagem apropriada.
   const enviaremail = () => {
     const inseriremail = newsletterRef.current?.querySelector('#email');
     if (!inseriremail) return;
     const email = inseriremail.value.trim();
 
     if (email === "") {
-      window.construcao && window.construcao("E-mail vazio, preencha.");
+      window.alerta && window.alerta("E-mail vazio, preencha.");
     } else if (!emailvalido(email)) {
-      window.construcao && window.construcao("E-mail incorreto, corrija.");
+      window.alerta && window.alerta("E-mail incorreto, corrija.");
     } else {
-      window.construcao && window.construcao("E-mail cadastrado!");
+      window.alerta && window.alerta("E-mail cadastrado!");
       inseriremail.value = "";
     }
   };

@@ -5,9 +5,9 @@ import { useEffect } from "react";
   -------------------------
   - Gerencia a lógica do carrossel de notícias.
   - Seleciona elementos do DOM (contêiner, slides, botões, indicadores) e calcula o offset para centralizar o slide ativo.
-  - Configura eventos para os botões de navegação e os indicadores (cliques) e ajusta o carrossel ao redimensionar a janela.\n
-  - Inicia um loop automático que avança o slide a cada 10 segundos.\n
-  - Adiciona eventos para pausar o loop ao passar o mouse sobre o contêiner e retomá-lo quando o mouse sair.\n
+  - Configura eventos para os botões de navegação e os indicadores (cliques) e ajusta o carrossel ao redimensionar a janela.
+  - Inicia um loop automático que avança o slide a cada 10 segundos.
+  - Adiciona eventos para pausar o loop ao passar o mouse sobre o contêiner e retomá-lo quando o mouse sair.
   - Retorna uma função de cleanup para remover os event listeners e limpar o intervalo.
 */
 const useNoticiasCarousel = () => {

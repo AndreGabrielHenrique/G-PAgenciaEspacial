@@ -1,225 +1,269 @@
 /* ==========================
    Estilos do Carrossel de Notícias
+   ==========================
+.noticias:
+  - Define o padding geral da seção de notícias para garantir espaçamento interno.
+.noticiastitulo:
+  - Define a margem inferior do título da seção.
+.paineldenoticias:
+  - É o contêiner que envolve o carrossel; possui posição relativa para permitir o posicionamento dos botões, indicadores e pseudo-elementos.
+.roldenoticias:
+  - Controla a área de visualização do carrossel, ocultando a rolagem horizontal e centralizando os slides com scroll-behavior smooth.
+.girarnoticias:
+  - Agrupa os slides e aplica uma transição suave ao movimento (transform).
+.girarnoticias figure a:
+  - Estiliza os links dentro dos slides, definindo sublinhado, cor e espaçamento.
+.girarnoticias figure a:hover:
+  - Altera a cor dos links quando o mouse passa sobre eles.
+.girarnoticias figure a:active:
+  - Remove o sublinhado e altera a cor ao clicar.
+.girarnoticias h3:
+  - Define o espaçamento abaixo dos títulos dos slides.
+.noticia:
+  - Cada slide é estilizado com Flexbox, possui borda, padding e transições para efeitos visuais.
+  - O slide ativo recebe uma animação de fade-in, enquanto os slides não ativos têm opacidade reduzida.
+.noticia img:
+  - Define a largura fixa e o espaçamento da imagem dentro do slide.
+.noticia figcaption:
+  - Alinha o texto da descrição à esquerda e define a altura da linha.
+.anterior, .proxima:
+  - São os botões de navegação posicionados de forma absoluta abaixo dos slides, com tamanho, cor, padding e efeitos de hover.
+.noticiasindicadores:
+  - Indicadores (pontos) que mostram o slide ativo, centralizados horizontalmente.
+Pseudo-elementos em .roldenoticias:
+  - Criam um efeito de fade nos cantos esquerdo e direito do carrossel, suavizando a transição dos slides que não estão visíveis.
+Media Queries:
+  - Ajustam os estilos para diferentes larguras de tela (telas pequenas, intermediárias e maiores), alterando padding, tamanho dos botões, visibilidade das imagens e dimensões dos indicadores.
+*/
+
+.noticias {
+  padding: 40px 110px; /* Espaçamento interno da seção de notícias */
+}
+
+.noticiastitulo {
+  margin-bottom: 40px; /* Espaço abaixo do título */
+}
+
+.paineldenoticias {
+  position: relative; /* Permite posicionamento absoluto dos botões, indicadores e pseudo-elementos */
+  max-width: 100%;
+  margin: 10px auto; /* Centraliza horizontalmente */
+  overflow: visible;
+}
+
+/* Pseudo-elementos para efeito de fade nos cantos do carrossel */
+.roldenoticias::before,
+.roldenoticias::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px; /* Largura do efeito de fade; ajuste conforme necessário */
+  height: 100%;
+  pointer-events: none;
+  z-index: 500;
+}
+
+.roldenoticias::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.roldenoticias::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.roldenoticias {
+  overflow-x: hidden; /* Oculta a rolagem horizontal */
+  overflow-y: visible;
+  width: 100%;
+  display: flex; /* Organiza os slides em linha */
+  margin: 20px auto; /* Centraliza o contêiner dos slides */
+  justify-content: center; /* Centraliza os slides */
+  position: relative;
+  scroll-behavior: smooth; /* Rolagem suave ao alternar slides */
+}
+
+.girarnoticias {
+  display: flex; /* Agrupa os slides em uma única linha */
+  transition: transform 0.7s ease-in-out; /* Transição suave para o movimento */
+  margin: 0 auto;
+  justify-content: center; /* Centraliza o grupo de slides */
+}
+
+.girarnoticias figure a {
+  text-decoration: underline; /* Sublinha os links dos slides */
+  color: #2C5EBF; /* Define a cor dos links */
+  margin-top: 5px; /* Espaço acima dos links */
+  display: block;
+}
+
+.girarnoticias figure a:hover {
+  text-decoration: underline;
+  color: #767676;
+}
+
+.girarnoticias figure a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.girarnoticias h3 {
+  margin-bottom: 7px; /* Espaço abaixo dos títulos dos slides */
+}
+
+.noticia {
+  flex: 0 0 60%; /* Cada slide ocupa 60% da largura disponível; ajuste conforme necessário */
+  max-width: 100%;
+  display: flex; /* Usa Flexbox para organizar o conteúdo do slide */
+  flex-direction: row; /* Alinha os itens horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: flex-start; /* Alinha os itens à esquerda */
+  padding: 10px; /* Espaçamento interno */
+  border: 1px solid #D9D9D9; /* Borda ao redor do slide */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: filter 0.5s, opacity 0.5s; /* Transição para efeitos visuais */
+  box-sizing: border-box;
+}
+
+.noticia img {
+  margin-right: 20px; /* Espaço entre a imagem e o texto */
+  width: 100px; /* Largura fixa da imagem */
+  height: auto; /* Altura proporcional */
+  flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.noticia figcaption {
+  text-align: left; /* Alinha o texto à esquerda */
+  line-height: 1.3em; /* Altura da linha para melhor leitura */
+}
+
+.noticia.ativa {
+  animation: fadeIn 2s; /* Animação de fade-in para o slide ativo */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.3; } /* Inicia com opacidade reduzida */
+  to { opacity: 1; }     /* Termina com opacidade total */
+}
+
+.noticia:not(.ativa) {
+  filter: opacity(45%); /* Slides não ativos: opacidade reduzida */
+}
+
+.anterior { left: -10px; } /* Posição inicial do botão de voltar */
+.proxima { right: -10px; }  /* Posição inicial do botão de avançar */
+
+.anterior, .proxima {
+  position: absolute; /* Posiciona os botões de navegação de forma absoluta */
+  top: 118%; /* Posiciona os botões abaixo dos slides */
+  transform: translateY(-50%); /* Centraliza verticalmente os botões */
+  background-color: transparent; /* Fundo transparente */
+  color: #2C2C2C; /* Cor dos botões */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Indica que os botões são clicáveis */
+  z-index: 1000; /* Garante que os botões fiquem acima dos slides */
+  font-size: 2rem; /* Tamanho da fonte dos botões */
+  width: auto;
+  padding-inline: 10px; /* Espaçamento interno horizontal */
+  border-radius: 3px; /* Bordas arredondadas */
+}
+
+.anterior:hover, .proxima:hover {
+  color: #767676; /* Cor alterada no hover dos botões */
+}
+
+.noticiasindicadores {
+  position: absolute; /* Posiciona os indicadores de forma absoluta */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
+  z-index: 100;
+  margin: 0;
+}
+
+.noticiasindicadores .apontarnoticia {
+  display: inline-block; /* Exibe os indicadores em linha */
+  width: 12px; /* Largura dos indicadores */
+  height: 12px; /* Altura dos indicadores */
+  margin: 0 5px; /* Espaçamento entre os indicadores */
+  background-color: #2C2C2C; /* Cor de fundo dos indicadores */
+  border-radius: 50%; /* Torna os indicadores circulares */
+  cursor: pointer;
+}
+
+.noticiasindicadores .apontarnoticia.ativa {
+  background-color: #767676; /* Cor do indicador ativo */
+}
+
+/* ==========================
+   Responsividade para o Carrossel
    ========================== */
 
-/* .noticias: Define o padding geral da seção de notícias */
-.noticias {
-    padding: 40px 110px; /* Espaçamento interno da seção */
+/* Para telas pequenas (max-width: 946px) */
+@media (max-width: 946px) {
+  .noticias {
+    padding: 30px; /* Reduz o padding geral */
   }
-  
-  /* .noticiastitulo: Espaço abaixo do título da seção */
-  .noticiastitulo {
-    margin-bottom: 40px; /* Distância do título para os itens */
-  }
-  
-  /* .paineldenoticias: Contêiner do carrossel com posição relativa para permitir a centralização e posicionamento de botões e indicadores */
-  .paineldenoticias {
-    position: relative;
-    max-width: 100%;
-    margin: 10px auto; /* Centraliza horizontalmente */
-    overflow: visible;
-  }
-  
-  /* .roldenoticias: Área de visualização do carrossel. Oculta a rolagem horizontal e centraliza os slides */
-  .roldenoticias {
-    overflow-x: hidden;
-    overflow-y: visible;
-    width: 100%;
-    display: flex;
-    margin: 20px auto;
-    justify-content: center;
-    position: relative;
-    scroll-behavior: smooth; /* Rolagem suave */
-  }
-  
-  /* .girarnoticias: Agrupa os slides e aplica transição suave para o movimento */
-  .girarnoticias {
-    display: flex;
-    transition: transform 0.7s ease-in-out;
-    margin: 0 auto;
-    justify-content: center;
-  }
-  
-  /* .girarnoticias figure a: Estiliza os links dentro dos slides */
-  .girarnoticias figure a {
-    text-decoration: underline; /* Sublinhado padrão */
-    color: #2C5EBF;             /* Cor dos links */
-    margin-top: 5px;             /* Espaçamento acima */
-    display: block;
-  }
-  
-  /* Hover nos links dos slides */
-  .girarnoticias figure a:hover {
-    text-decoration: underline;
-    color: #767676;
-  }
-  
-  /* Estado ativo dos links dos slides */
-  .girarnoticias figure a:active {
-    text-decoration: none;
-    color: black;
-  }
-  
-  /* .girarnoticias h3: Espaço abaixo dos títulos dos slides */
-  .girarnoticias h3 {
-    margin-bottom: 7px;
-  }
-  
-  /* .noticia: Estiliza cada slide com layout flex, borda, padding e transições para efeitos de opacidade e desfoque */
   .noticia {
-    flex: 0 0 100%; /* Cada slide ocupa 100% da largura disponível */
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-    border: 1px solid #D9D9D9;
-    border-radius: 5px;
-    transition: filter 0.5s, opacity 0.5s;
-    box-sizing: border-box;
+    padding: 2%; /* Ajusta o padding dos slides */
   }
-  
-  /* .noticia img: Estiliza as imagens dos slides */
   .noticia img {
-    margin-right: 20px; /* Espaço entre imagem e texto */
-    width: 100px;       /* Largura fixa */
-    height: auto;       /* Altura proporcional */
-    flex-shrink: 0;     /* Impede encolhimento */
+    display: none; /* Oculta as imagens para otimizar o layout */
   }
-  
-  /* .noticia figcaption: Estiliza o texto da descrição */
-  .noticia figcaption {
-    text-align: left;
-    line-height: 1.3em;
-  }
-  
-  /* .noticia.ativa: Aplica animação de fade-in ao slide ativo */
-  .noticia.ativa {
-    animation: fadeIn 2s;
-  }
-  
-  /* Animação fadeIn: Transição de opacidade de 0.3 para 1 */
-  @keyframes fadeIn {
-    from { opacity: 0.3; }
-    to { opacity: 1; }
-  }
-  
-  /* Slides não ativos ficam desfocados e com opacidade reduzida */
-  .noticia:not(.ativa) {
-    filter: blur(4px);
-    opacity: 0.5;
-  }
-  
-  /* Botões de navegação: .anterior e .proxima */
-  .anterior { left: -10px; }
-  .proxima { right: -10px; }
   .anterior, .proxima {
-    position: absolute;
-    top: 118%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    color: #2C2C2C;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 2rem;
-    width: auto;
-    padding-inline: 10px;
-    border-radius: 3px;
+    font-size: 2.3rem; /* Aumenta o tamanho dos botões para facilitar o toque */
+    top: 115%; /* Ajusta a posição vertical dos botões */
   }
-  .anterior:hover, .proxima:hover {
-    color: #767676;
+  .anterior {
+    left: -11px;
   }
-  
-  /* Indicadores do carrossel: .noticiasindicadores e .apontarnoticia */
-  .noticiasindicadores {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    margin: 0;
+  .proxima {
+    right: -11px;
   }
   .noticiasindicadores .apontarnoticia {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    background-color: #2C2C2C;
-    border-radius: 50%;
-    cursor: pointer;
+    width: 17px; /* Aumenta os indicadores para melhor visibilidade */
+    height: 17px;
   }
-  .noticiasindicadores .apontarnoticia.ativa {
-    background-color: #767676;
+}
+
+/* Para telas intermediárias (min-width: 947px e max-width: 1335px) */
+@media (min-width: 947px) and (max-width: 1335px) {
+  .noticias {
+    padding: 40px; /* Ajusta o padding para telas intermediárias */
   }
-  
-  /* ==========================
-     Responsividade para o Carrossel
-     ========================== */
-  
-  /* Para telas pequenas (max-width: 946px) */
-  @media (max-width: 946px) {
-    .noticias {
-      padding: 30px; /* Reduz o padding geral */
-    }
-    .noticia {
-      padding: 2%; /* Ajusta o padding dos slides */
-    }
-    .noticia img {
-      display: none; /* Oculta as imagens para otimizar o layout */
-    }
-    .anterior, .proxima {
-      font-size: 2.4rem; /* Aumenta o tamanho dos botões para facilitar o toque */
-      top: 122%; /* Ajusta a posição vertical dos botões */
-    }
-    .anterior {
-      left: -11px;
-    }
-    .proxima {
-      right: -11px;
-    }
-    .noticiasindicadores .apontarnoticia {
-      width: 17px; /* Aumenta o tamanho dos indicadores para melhor visibilidade */
-      height: 17px;
-    }
+  .roldenoticias, .girarnoticias {
+    width: 100% !important;
+    height: auto !important;
+    justify-content: center !important;
+    display: flex !important;
   }
-  
-  /* Para telas intermediárias (min-width: 947px e max-width: 1335px) */
-  @media (min-width: 947px) and (max-width: 1335px) {
-    .noticias {
-      padding: 40px; /* Ajusta o padding para telas intermediárias */
-    }
-    .roldenoticias, .girarnoticias {
-      width: 100% !important;  /* Garante que os contêineres ocupem 100% da largura */
-      height: auto !important;  /* Altura automática */
-      justify-content: center !important; /* Centraliza os slides */
-      display: flex !important;
-    }
-    .anterior {
-      left: -35px !important;
-    }
-    .proxima {
-      right: -35px !important;
-    }
+  .anterior {
+    left: -12px !important;
   }
-  
-  /* Para telas maiores (min-width: 801px) */
-  @media (min-width: 801px) {
-    .girarnoticias {
-      justify-content: center !important;
-    }
-    .noticia.ativa {
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    .noticia {
-      flex: 0 0 50% !important;  /* Cada slide ocupa 50% da largura do contêiner */
-      max-width: 70% !important;  /* Largura máxima dos slides limitada a 70% */
-    }
-    .anterior {
-      left: -10px !important;
-    }
-    .proxima {
-      right: -10px !important;
-    }
-  }  
+  .proxima {
+    right: -12px !important;
+  }
+}
+
+/* Para telas maiores (min-width: 801px) */
+@media (min-width: 801px) {
+  .girarnoticias {
+    justify-content: center !important;
+  }
+  .noticia.ativa {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .noticia {
+    flex: 0 0 50% !important; /* Cada slide ocupa 50% da largura do contêiner */
+    max-width: 70% !important; /* Largura máxima dos slides limitada a 70% */
+  }
+  .anterior {
+    left: -10px !important;
+  }
+  .proxima {
+    right: -10px !important;
+  }
+}

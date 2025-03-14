@@ -24,7 +24,7 @@ const Alert = forwardRef((props, ref) => {
 
   // Expondo métodos para o componente pai (por exemplo, App.jsx) usando useImperativeHandle.
   useImperativeHandle(ref, () => ({
-    // showAlert: Atualiza a mensagem (usa valor padrão se msg for falsy) e trava o scroll,
+    // showAlert: Atualiza a mensagem (usa valor padrão se msg for false) e trava o scroll,
     // em seguida adiciona a classe 'ativo' para exibir o alerta.
     showAlert(msg) {
       setMessage(msg ? msg : "Em construção...");

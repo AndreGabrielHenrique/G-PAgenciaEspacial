@@ -5,8 +5,8 @@ import equipeImg from '../assets/Imagens/Imagem.png';
 /*
   Componente Equipe
   ------------------
-  - Renderiza a seção que apresenta informações sobre a equipe.\n
-  - Possui um bloco de texto (com título e parágrafo) e um bloco com uma imagem ilustrativa.\n
+  - Renderiza a seção que apresenta informações sobre a equipe.
+  - Possui um bloco de texto (com título e parágrafo) e um bloco com uma imagem ilustrativa.
   - O layout utiliza Flexbox para distribuir o texto e a imagem.
 */
 const Equipe = () => {

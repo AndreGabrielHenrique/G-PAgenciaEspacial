@@ -5,9 +5,9 @@ import '../css/Newsletter.css';
 /*
   Componente Newsletter
   ----------------------
-  - Renderiza um formulário para cadastro de e-mail para a newsletter.\n
-  - Utiliza o hook useSendNewsletter para gerenciar a validação e envio do formulário.\n
-  - Ao submeter, o hook chama window.construcao() com a mensagem apropriada para exibir o alerta global.
+  - Renderiza um formulário para cadastro de e-mail para a newsletter.
+  - Utiliza o hook useSendNewsletter para gerenciar a validação e envio do formulário.
+  - Ao submeter, o hook chama window.alerta() com a mensagem apropriada para exibir o alerta global.
 */
 const Newsletter = () => {
   const { newsletterRef, handleSubmit } = useSendNewsletter();
