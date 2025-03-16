@@ -5,14 +5,14 @@ import { useEffect } from "react";
   -------------------------
   - Gerencia a lógica do carrossel de notícias.
   - Seleciona elementos do DOM (contêiner, slides, botões, indicadores) e calcula o offset para centralizar o slide ativo.
-  - Configura eventos para os botões de navegação e os indicadores (cliques) e ajusta o carrossel ao redimensionar a janela.
+  - Configura eventos para os botões de navegação e para os indicadores (cliques) e ajusta o carrossel ao redimensionar a janela.
   - Inicia um loop automático que avança o slide a cada 10 segundos.
-  - Adiciona eventos para pausar o loop ao passar o mouse sobre o contêiner e retomá-lo quando o mouse sair.
+  - Pausa o loop automático quando o mouse está sobre o contêiner e retoma quando o mouse sai.
   - Retorna uma função de cleanup para remover os event listeners e limpar o intervalo.
 */
 const useNoticiasCarousel = () => {
   useEffect(() => {
-    // Seleciona os elementos do carrossel a partir do DOM
+    // Seleciona os elementos do carrossel no DOM
     const paineldenoticias = document.querySelector(".paineldenoticias");
     const roldenoticias = document.querySelector(".roldenoticias");
     const girarnoticias = document.querySelector(".girarnoticias");
@@ -25,7 +25,7 @@ const useNoticiasCarousel = () => {
     const totalNoticias = noticiaElements.length;
     let intervalId;
 
-    // Função para centralizar o slide ativo
+    // Função para centralizar o slide ativo calculando o offset
     const trocarnoticia = () => {
       if (!roldenoticias || !girarnoticias || noticiaElements.length === 0) return;
       const noticiaativa = noticiaElements[noticiaatual];
@@ -34,18 +34,17 @@ const useNoticiasCarousel = () => {
       const noticiaesquerda = noticiaativa.offsetLeft;
       const offsetrol = largurarol / 2 - (noticiaesquerda + larguranoticia / 2);
       girarnoticias.style.transform = `translateX(${offsetrol}px)`;
-
-      // Atualiza a classe 'ativa' em cada slide para destacar o slide atual
+      // Atualiza a classe 'ativa' para destacar o slide atual
       noticiaElements.forEach((el, index) => {
         el.classList.toggle("ativa", index === noticiaatual);
       });
-      // Atualiza os indicadores (pontos) para refletir o slide ativo
+      // Atualiza os indicadores para refletir o slide ativo
       apontarnoticias.forEach((dot, index) => {
         dot.classList.toggle("ativa", index === noticiaatual);
       });
     };
 
-    // Função que inicia o loop automático do carrossel
+    // Inicia o loop automático do carrossel, avançando o slide a cada 10 segundos
     const iniciarIntervalo = () => {
       intervalId = setInterval(() => {
         noticiaatual = (noticiaatual + 1) % totalNoticias;
@@ -53,7 +52,7 @@ const useNoticiasCarousel = () => {
       }, 10000);
     };
 
-    // Função para parar o loop automático
+    // Para o loop automático
     const pararIntervalo = () => {
       clearInterval(intervalId);
     };
@@ -63,32 +62,26 @@ const useNoticiasCarousel = () => {
       noticiaatual = (noticiaatual - 1 + totalNoticias) % totalNoticias;
       trocarnoticia();
     });
-
     proxima?.addEventListener("click", () => {
       noticiaatual = (noticiaatual + 1) % totalNoticias;
       trocarnoticia();
     });
-
-    // Configura o clique nos indicadores (pontos) para navegar manualmente
+    // Configura o clique nos indicadores para navegação manual
     apontarnoticias.forEach((dot) => {
       dot.addEventListener("click", () => {
         noticiaatual = parseInt(dot.getAttribute("data-index"));
         trocarnoticia();
       });
     });
-
     // Recalcula a centralização ao redimensionar a janela
     window.addEventListener("resize", trocarnoticia);
-
-    // Pausa o loop automático quando o mouse estiver sobre o contêiner e retoma quando sair
+    // Pausa o loop quando o mouse está sobre o contêiner e retoma quando sai
     paineldenoticias?.addEventListener("mouseover", pararIntervalo);
     paineldenoticias?.addEventListener("mouseout", iniciarIntervalo);
-
-    // Ajusta a centralização inicial após um pequeno atraso para garantir que o layout esteja renderizado
+    // Ajusta a centralização inicial com um pequeno atraso
     setTimeout(trocarnoticia, 100);
     iniciarIntervalo();
-
-    // Cleanup: remove os event listeners e limpa o intervalo quando o componente for desmontado
+    // Cleanup: remove event listeners e limpa o intervalo ao desmontar o componente
     return () => {
       pararIntervalo();
       window.removeEventListener("resize", trocarnoticia);

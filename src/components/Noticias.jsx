@@ -51,7 +51,7 @@ const Noticias = () => {
               <figcaption>
                 <h3>História da Física</h3>
                 Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e da gravitação universal. 
-                Seus trabalhos, especialmente
+                Seus trabalhos, especialmente<br />
                 <a id="fisica" onClick={() => window.alerta()}>Sobre mais...</a>
               </figcaption>
             </figure>
@@ -60,7 +60,7 @@ const Noticias = () => {
               <figcaption>
                 <h3>O Espaço</h3>
                 O Espaço, como tudo nesse mundo é perfeito se fosse aleatório teria falhas até a natureza é perfeita como uma abelha sabe fazer mel e nós não. 
-                Como que a matemática é
+                Como que a matemática é<br />
                 <a id="espaco" onClick={() => window.alerta()}>Sobre mais...</a>
               </figcaption>
             </figure>
