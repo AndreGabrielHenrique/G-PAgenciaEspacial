@@ -6,7 +6,7 @@ import Noticias from './components/Noticias';
 import Footer from './components/Footer';
 import Alert from './components/Alert';
 import Propulsores from './components/Propulsores';
-import './css/global.css';
+import './styles/global.sass';
 
 /*
   Componente App

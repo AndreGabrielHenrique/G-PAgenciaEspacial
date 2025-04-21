@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Logo.css';
+import '../styles/Logo.sass';
 
 /*
   Componente Logo

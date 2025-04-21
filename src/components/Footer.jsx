@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Footer.css';
+import '../styles/Footer.sass';
 // Importa o componente Logo para ser exibido no rodapé.
 import Logo from "./Logo";
 import xLogo from '../assets/Imagens/X Logo.png';

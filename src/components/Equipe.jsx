@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Equipe.css';
+import '../styles/Equipe.sass';
 import equipeImg from '../assets/Imagens/Imagem.png';
 
 /*

@@ -1,0 +1,60 @@
+// Equipe.sass - Estilização da seção sobre a equipe
+// ------------------------------------------------------------------
+// .equipe:
+//   - Exibe a seção com layout flexível, aplicando espaçamentos horizontais (padding-inline) e verticais
+//   - Possui fundo claro (#E3E3E3) e distribui os elementos com "space-between"
+// .texto:
+//   - Organiza o conteúdo textual em coluna e ocupa o espaço restante
+// .texto p:
+//   - Define margem superior e altura de linha para melhor legibilidade
+// .equipe aside:
+//   - Exibe o bloco que contém a imagem, com largura limitada para evitar que ela sobreponha o texto
+// Media Queries:
+//   - Em telas pequenas, reduz o padding e oculta a imagem
+//   - Em telas intermediárias, mantém o layout em linha com o texto à esquerda (ocupando o espaço restante) e a imagem à direita com largura fixa, garantindo padding simétrico
+
+.equipe
+  display: flex                    // Organiza os elementos em linha usando Flexbox
+  padding-inline: 120px             // Padding horizontal padrão para desktops
+  padding-top: 30px                // Padding superior
+  padding-bottom: 30px             // Padding inferior
+  background-color: #E3E3E3          // Fundo claro
+  justify-content: space-between   // Espaça os elementos horizontalmente
+
+  .texto
+    display: flex                    // Organiza o conteúdo textual com Flexbox
+    flex-direction: column           // Exibe os itens em coluna
+    flex: 1                          // Ocupa o espaço restante disponível
+    min-width: 0                     // Permite que o texto encolha sem causar overflow
+    flex-wrap: wrap
+
+    p
+      margin-top: 24px                 // Espaço acima dos parágrafos
+      line-height: 23px                // Altura de linha para boa legibilidade
+
+  aside
+    display: flex                    // Exibe o bloco com a imagem
+    max-width: 40%                   // Largura máxima padrão para desktops
+    width: 100%                      // A imagem ocupa 100% do espaço dentro do container
+    box-sizing: border-box           // Inclui padding e borda no cálculo da largura
+    justify-content: flex-end        // Alinha o conteúdo do aside à direita
+
+  @media (max-width: 946px)
+    padding-inline: 30px           // Reduz o padding horizontal
+    aside
+      display: none                  // Oculta a imagem para otimizar o layout
+
+  @media (min-width: 947px) and (max-width: 1335px)
+    padding-left: 40px             // Padding esquerdo fixo
+    padding-right: 40px            // Padding direito fixo, garantindo simetria
+    justify-content: flex-start    // Alinha os elementos à esquerda para evitar que a imagem ultrapasse o container
+    
+    .texto
+      min-width: 0                  // Permite que o bloco de texto se ajuste sem overflow
+    
+    aside
+      display: inline-block         // Exibe a imagem
+      max-width: 430px              // Limita a largura máxima da imagem para evitar overflow
+      overflow-x: hidden            // Impede que o conteúdo interno cause rolagem horizontal
+      width: 100%                   // Mantém a responsividade da imagem dentro do limite definido
+      margin-left: 0                // Remove margem que possa causar deslocamento

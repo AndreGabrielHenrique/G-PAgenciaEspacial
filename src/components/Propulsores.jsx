@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Propulsores.css';
+import '../styles/Propulsores.sass';
 
 /*
   Componente Propulsores

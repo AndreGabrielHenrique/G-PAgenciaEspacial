@@ -1,6 +1,6 @@
 import React from 'react';
 import useSendNewsletter from '../hooks/useSendNewsletter';
-import '../css/Newsletter.css';
+import '../styles/Newsletter.sass';
 
 /*
   Componente Newsletter

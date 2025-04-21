@@ -1,0 +1,80 @@
+// ==========================
+// Header.sass - Estilos do Header (Cabeçalho)
+// ==========================
+// header:
+//   - Define o layout do cabeçalho com um padding de 40px e utiliza Flexbox para distribuir os elementos horizontalmente
+//   - Permite que os elementos quebrem linha (flex-wrap) e garante que estejam centralizados verticalmente
+//   - Justifica os elementos com espaço entre eles
+// 
+// .menu ul, .usuario ul:
+//   - Remove os marcadores padrão das listas e exibe os itens em linha
+// 
+// .menu ul li:
+//   - Aplica um espaçamento de 20px entre os itens do menu
+// 
+// .menu ul li a:hover:
+//   - Quando o mouse passa sobre os links do menu, muda o fundo, adiciona box-shadow e arredonda as bordas
+// 
+// .menu ul li a:active:
+//   - Define a cor do texto ao clicar nos links
+// 
+// .usuario ul li:
+//   - Aplica um espaçamento menor (10px) aos itens do menu do usuário
+// 
+// : last-child:
+//   - Remove a margem do último item para evitar espaçamentos extras
+// 
+// Media Query (max-width: 946px):
+//   - Em telas menores, o header passa a ter layout em coluna, com gap de 20px e padding reduzido para 30px
+//   - A logo é ocultada para otimizar o espaço e os itens do menu têm fonte aumentada para melhor usabilidade
+
+header
+  padding: 40px // Espaçamento interno para melhor visualização
+  display: flex // Layout flexível para distribuir os elementos
+  flex-direction: row // Alinha os itens horizontalmente
+  flex-wrap: wrap // Permite que os elementos quebrem linha se necessário
+  align-items: center // Alinha os itens verticalmente ao centro
+  justify-content: space-between // Distribui os elementos uniformemente
+
+  .menu, .usuario
+    ul
+      list-style-type: none // Remove os marcadores padrão
+      display: flex         // Exibe os itens em linha
+
+  .menu
+    ul
+      li
+        margin-right: 20px // Espaçamento entre os itens do menu
+
+        a:hover
+          background-color: #D7D7D7 // Altera o fundo ao passar o mouse
+          box-shadow: 0 0 0 0.5rem #D7D7D7 // Aplica uma sombra para realce visual
+          border-radius: 5px // Arredonda as bordas
+
+        a:active
+          color: #767676 // Altera a cor do texto ao clicar
+
+        &:last-child
+          margin-right: 0 // Remove margem do último item
+
+  .usuario
+    ul
+      li
+        margin-right: 10px // Espaçamento menor para itens do usuário
+
+        &:last-child
+          margin-right: 0 // Remove margem do último item
+
+  @media (max-width: 946px)
+    flex-direction: column // Organiza os elementos em coluna em telas pequenas
+    gap: 20px // Espaço entre os elementos
+    text-align: center // Centraliza o texto
+    padding: 30px // Reduz o padding
+
+    .logo
+      display: none // Oculta a logo em telas pequenas para otimizar o espaço
+
+    .menu
+      ul
+        li
+          font-size: large // Aumenta a fonte dos itens do menu para melhor legibilidade

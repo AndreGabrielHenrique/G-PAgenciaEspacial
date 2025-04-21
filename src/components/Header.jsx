@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Header.css';
+import '../styles/Header.sass';
 // Importa o componente Logo para ser usado no cabeçalho.
 import Logo from './Logo';
 

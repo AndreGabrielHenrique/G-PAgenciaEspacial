@@ -5,7 +5,7 @@ import React, {
   useState, 
   useEffect 
 } from 'react';
-import '../css/Alert.css';
+import '../styles/Alert.sass';
 
 /*
   Componente Alert

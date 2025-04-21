@@ -1,6 +1,6 @@
 import React from "react";
 import useNoticiasCarousel from "../hooks/useNoticiasCarousel";
-import "../css/Noticias.css";
+import "../styles/Noticias.sass";
 import fogueteImg from "../assets/Imagens/Image.png";
 import mecanicoImg from "../assets/Imagens/Image-1.png";
 import agenciaImg from "../assets/Imagens/Image-2.png";

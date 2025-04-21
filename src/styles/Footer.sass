@@ -1,0 +1,61 @@
+// Footer.css - Estilização do rodapé
+// ----------------------------------------------------------------------
+// footer:
+//   - Define o layout do rodapé com padding, disposição em coluna e centralização
+//   - Adiciona uma borda superior para separar visualmente o rodapé do conteúdo
+// 
+// footer .logo:
+//   - Ajusta as margens da logo exibida no rodapé, garantindo um espaçamento adequado
+// 
+// .redessociais ul:
+//   - Remove os marcadores padrão das listas e exibe os itens em linha
+// 
+// .redessociais ul li:
+//   - Aplica um espaçamento à direita entre os itens da lista
+// 
+// .redessociais ul li a:hover:
+//   - Quando o usuário passa o mouse sobre os links, altera o fundo, adiciona uma sombra (box-shadow)
+//     e arredonda as bordas para realce visual
+// 
+// .redessociais ul li a:active:
+//   - Define a cor do texto ao clicar nos links das redes sociais
+// 
+// .redessociais ul li:last-child:
+//   - Remove a margem do último item para evitar espaçamentos desnecessários
+// 
+// Media Query:
+//   - Em telas com largura máxima de 946px, ajusta o margin-top do footer para telas menores
+
+footer
+  padding: 35px
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  border-top: 1px solid #767676 // Linha separadora
+
+  .logo
+    margin-top: 8px
+    margin-bottom: 30px
+
+  .redessociais
+    ul
+      list-style-type: none // Remove os marcadores padrão
+      display: flex         // Exibe os itens em linha
+
+      li
+        margin-right: 20px // Espaço entre os itens
+
+        a:hover
+          background-color: #D7D7D7
+          box-shadow: 0 0 0 1rem #D7D7D7
+          border-radius: 5px
+
+        a:active
+          color: #767676 // Cor do texto ao clicar
+
+        &:last-child
+          margin-right: 0 // Remove margem do último item
+
+  @media (max-width: 946px)
+    margin-top: 8px // Ajusta o margin-top para telas pequenas
