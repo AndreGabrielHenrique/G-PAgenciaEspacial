@@ -1,4 +1,7 @@
-# Logs
+# Arquivo de configuração do Git para especificar arquivos/diretórios a serem ignorados
+# Local: .gitignore (na raiz do projeto React/Vite)
+
+# Logs de aplicação e ferramentas de desenvolvimento
 logs
 *.log
 npm-debug.log*
@@ -7,6 +10,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependências e builds
 node_modules
 dist
 dist-ssr

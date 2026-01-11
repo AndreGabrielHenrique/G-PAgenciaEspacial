@@ -1,36 +1,38 @@
-// Global.css - Reset básico e estilos globais
+// Global.sass - Reset básico e estilos globais
 // ------------------------------------------------------------------
 // *:
-//   - Remove margens e paddings padrão
+//   - Remove margens e paddings padrão dos navegadores
 //   - Define o box-sizing, comportamento de rolagem suave e fonte padrão para todo o site
 // 
 // a:
-//   - Define o cursor pointer para links
+//   - Define o cursor pointer para links (melhora a usabilidade indicando elementos clicáveis)
 // 
 // #login, #cadastrar, #enviar:
 //   - Estilizam botões específicos com tamanhos, cores, paddings e bordas arredondadas
 
+// Seletor universal (*) - aplica estilos a todos os elementos HTML
 *
-  margin: 0
-  padding: 0
-  box-sizing: border-box
-  scroll-behavior: smooth
-  font-family: Arial, sans-serif
+  margin: 0                    // Remove margens padrão dos navegadores
+  padding: 0                   // Remove paddings padrão dos navegadores
+  box-sizing: border-box       // Inclui padding e border no cálculo total de largura/altura dos elementos
+  scroll-behavior: smooth      // Adiciona rolagem suave para navegação por âncoras (scroll-behavior)
+  font-family: Arial, sans-serif // Define fonte padrão para todo o site (Arial com fallback para sans-serif)
 
+// Seletor de links (a) - estiliza todos os elementos de âncora
 a
-  cursor: pointer
+  cursor: pointer              // Muda o cursor para "mãozinha" (pointer) em links, indicando ação clicável
 
+// Seletor de ID #login - estiliza o botão de login específico
 #login
-  font-size: medium
-  padding: 10px 30px
-  background-color: #E3E3E3
-  border-color: #767676
-  border-radius: 7px
+  font-size: medium            // Define tamanho de fonte médio (relativo ao padrão do navegador)
+  padding: 10px 30px           // Adiciona padding interno: 10px vertical, 30px horizontal
+  background-color: #E3E3E3    // Define cor de fundo cinza claro (#E3E3E3)
+  border-color: #767676        // Define cor da borda cinza médio (#767676)
+  border-radius: 7px           // Arredonda cantos do botão com raio de 7 pixels
 
+// Seletores de ID #cadastrar e #enviar - estilizam botões de cadastro e envio
 #cadastrar, #enviar
-  font-size: medium
-  color: white
-  padding: 10px 15px
-  background-color: #2C2C2C
-  border-color: #2C2C2C
-  border-radius: 7px
+  font-size: medium            // Define tamanho de fonte médio (consistente com #login)
+  color: white                 // Define cor do texto como branco
+  padding: 10px 15px           // Adiciona padding interno: 10px vertical, 15px horizontal
+  background-color: #2C2C2C    // Define cor de fundo cinza escuro quase preto (#

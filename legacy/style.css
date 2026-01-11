@@ -1,0 +1,479 @@
+/*
+  Estilos CSS para a G&P Agência Espacial (versão legada)
+  Local: legacy/style.css
+  Características: Reset básico, layout flexbox, design responsivo, transições e animações
+*/
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;                 /* Remove margens padrão dos navegadores */
+    padding: 0;                /* Remove paddings padrão dos navegadores */
+    box-sizing: border-box;    /* Inclui padding e border no cálculo de width/height */
+    scroll-behavior: smooth;   /* Rolagem suave para navegação por âncoras */
+    font-family: Arial, sans-serif; /* Fonte padrão para todo o site */
+}
+
+/* Links com cursor pointer para melhor indicativo de ação */
+a {
+    cursor: pointer;
+}
+
+/* Cabeçalho com layout flexível e espaçamento */
+header {
+    padding: 40px;
+    display: flex;
+    flex-direction: row;       /* Layout em linha para desktop */
+    flex-wrap: wrap;           /* Permite quebra de linha em telas menores */
+    align-items: center;       /* Centraliza verticalmente os itens */
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+}
+
+/* Estilização de listas para menus */
+.menu ul, .usuario ul, .redessociais ul {
+    list-style-type: none;     /* Remove marcadores padrão das listas */
+    display: flex;             /* Layout flex para itens em linha */
+}
+
+/* Espaçamento entre itens do menu principal e redes sociais */
+.menu ul li, .redessociais ul li {
+    margin-right: 20px;
+}
+
+/* Efeito hover para itens do menu principal */
+.menu ul li a:hover {
+    background-color: #D7D7D7; /* Fundo cinza claro ao passar mouse */
+    box-shadow: 0 0 0 0.50rem #D7D7D7; /* Expansão visual do fundo */
+    border-radius: 5px;        /* Cantos arredondados */
+}
+
+/* Efeito active (clique) para links */
+.menu ul li a:active, .redessociais ul li a:active {
+    color: #767676;            /* Cor cinza médio ao clicar */
+}
+
+/* Espaçamento entre botões de usuário */
+.usuario ul li {
+    margin-right: 10px;
+}
+
+/* Remove margem direita do último item em cada lista */
+.menu ul li:last-child, .redessociais ul li:last-child, .usuario ul li:last-child {
+    margin-right: 0;
+}
+
+/* Estilização específica do botão de login */
+#login {
+    font-size: medium;
+    padding: 10px 30px;        /* Padding maior horizontalmente */
+    background-color: #E3E3E3; /* Fundo cinza muito claro */
+    border-color: #767676;     /* Borda cinza médio */
+    border-radius: 7px;        /* Cantos levemente arredondados */
+}
+
+/* Estilização dos botões de cadastro e envio */
+#cadastrar, #enviar {
+    font-size: medium;
+    color: white;              /* Texto branco para contraste */
+    padding: 10px 15px;        /* Padding compacto */
+    background-color: #2C2C2C; /* Fundo cinza escuro quase preto */
+    border-color: #2C2C2C;     /* Borda igual ao fundo */
+    border-radius: 7px;        /* Cantos levemente arredondados */
+}
+
+/* Seção hero com imagem de fundo e texto grande */
+.propulsores {
+    font-size: 350%;           /* Texto muito grande para impacto visual */
+    font-weight: bold;         /* Negrito para destaque */
+    color: white;              /* Texto branco sobre imagem */
+    background-image: url('../src/assets/Imagens/Fundo section.png'); /* Imagem de fundo espacial */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-size: cover;    /* Cobre toda a área disponível */
+    text-align: center;        /* Centraliza o texto */
+    padding: 15%;              /* Padding grande para criar área de respiro */
+}
+
+/* Seção de newsletter centralizada */
+.newsletter {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Espaçamento abaixo do título da newsletter */
+.newsletter h2 {
+    margin-bottom: 40px;
+}
+
+/* Estilização do campo de input de email */
+input {
+    padding: 10px;
+    border: 1px solid #D9D9D9; /* Borda cinza claro */
+    border-radius: 5px;        /* Cantos levemente arredondados */
+    outline: #2C2C2C;          /* Cor do outline ao focar (cinza escuro) */
+}
+
+/* Modal de alerta (overlay semi-transparente) */
+.fundoalerta {
+    display: none;             /* Inicialmente oculto */
+    position: fixed;           /* Posição fixa sobre todo o conteúdo */
+    z-index: 1;                /* Camada acima do conteúdo normal */
+    left: 0;
+    top: 0;
+    width: 100%;               /* Ocupa toda a largura da viewport */
+    height: 100%;              /* Ocupa toda a altura da viewport */
+    background-color: rgba(168, 155, 155, 0.388); /* Overlay semi-transparente */
+}
+
+/* Caixa de alerta centralizada */
+.alerta {
+    color: #E3E3E3;            /* Texto cinza muito claro */
+    position: absolute;        /* Posicionamento absoluto dentro do overlay */
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%); /* Centralização horizontal precisa */
+    margin: 15% auto;
+}
+
+/* Texto do aviso com efeito visual */
+.aviso {
+    font-size: 70px;           /* Texto muito grande para destaque */
+    font-weight: bold;         /* Negrito */
+    -webkit-text-stroke: 1.5px #2C2C2C; /* Contorno escuro ao redor das letras */
+}
+
+/* Seção sobre a equipe com layout flexível */
+.equipe {
+    display: flex;             /* Layout flex para texto e imagem lado a lado */
+    padding-inline: 120px;     /* Padding horizontal grande */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #E3E3E3; /* Fundo cinza muito claro */
+}
+
+/* Container de texto da equipe */
+.texto {
+    display: flex;
+    flex-wrap: wrap;           /* Permite quebra de linha se necessário */
+    flex-direction: column;    /* Organiza conteúdo em coluna */
+}
+
+/* Parágrafo com espaçamento e legibilidade */
+.texto p {
+    margin-top: 24px;          /* Espaço acima do parágrafo */
+    line-height: 23px;         /* Altura de linha para melhor legibilidade */
+}
+
+/* Imagem da equipe */
+.equipe aside {
+    display: flex;
+    width: auto;               /* Largura automática conforme imagem */
+}
+
+/* Seção de notícias com carrossel */
+.noticias {
+    padding: 40px 110px;       /* Padding horizontal e vertical */
+}
+
+/* Título da seção de notícias */
+.noticiastitulo {
+    margin-bottom: 40px;       /* Espaço abaixo do título */
+}
+
+/* Container principal do carrossel */
+.paineldenoticias {
+    position: relative;        /* Contexto de posicionamento para elementos filhos */
+    max-width: 96%;            /* Largura máxima relativa */
+    margin: 10px auto;         /* Centralização horizontal */
+    overflow: visible;         /* Permite que elementos transbordem (setas de navegação) */
+}
+
+/* Área de rolagem do carrossel */
+.roldenoticias {
+    overflow-x: hidden;        /* Oculta rolagem horizontal */
+    overflow-y: visible;       /* Permite rolagem vertical se necessário */
+    width: 100%;               /* Ocupa toda a largura disponível */
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;   /* Centraliza conteúdo horizontalmente */
+    position: relative;
+    scroll-behavior: smooth;   /* Rolagem suave para navegação programática */
+}
+
+/* Container interno que realiza a transição */
+.girarnoticias {
+    display: flex;
+    transition: transform 0.7s ease-in-out; /* Transição suave para mudanças de slide */
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Estilização de links dentro das notícias */
+.girarnoticias figure a {
+    text-decoration: underline; /* Sublinhado padrão para links */
+    color: #2C5EBF;            /* Cor azul para links */
+    margin-top: 5px;           /* Espaço acima do link */
+    display: block;            /* Faz o link ocupar linha própria */
+}
+
+/* Efeito hover para links */
+.girarnoticias figure a:hover {
+    text-decoration: underline; /* Mantém sublinhado */
+    color: #767676;            /* Muda para cinza médio */
+}
+
+/* Efeito active (clique) para links */
+.girarnoticias figure a:active {
+    text-decoration: none;     /* Remove sublinhado ao clicar */
+    color: black;              /* Muda para preto */
+}
+
+/* Títulos dentro do carrossel */
+.girarnoticias h3 {
+    margin-bottom: 7px;        /* Espaço abaixo dos títulos */
+}
+
+/* Item individual de notícia */
+.noticia {
+    flex: 0 0 100%;            /* Ocupa 100% da largura por padrão (mobile) */
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;       /* Imagem e texto lado a lado */
+    align-items: center;       /* Centraliza verticalmente */
+    justify-content: flex-start; /* Alinha conteúdo à esquerda */
+    padding: 10px;
+    border: 1px solid #D9D9D9; /* Borda cinza claro */
+    border-radius: 5px;        /* Cantos levemente arredondados */
+    transition: filter 0.5s, opacity 0.5s; /* Transições suaves para efeitos visuais */
+    box-sizing: border-box;    /* Inclui padding e border no cálculo de width */
+}
+
+/* Imagem dentro da notícia */
+.noticia img {
+    margin-right: 20px;        /* Espaço entre imagem e texto */
+    width: 100px;              /* Largura fixa */
+    height: auto;              /* Altura proporcional */
+    flex-shrink: 0;            /* Impede que a imagem encolha */
+}
+
+/* Legenda da notícia */
+.noticia figcaption {
+    text-align: left;          /* Alinhamento à esquerda */
+    line-height: 1.3em;        /* Altura de linha para legibilidade */
+}
+
+/* Animação para notícia ativa (fade in) */
+.noticia.ativa {
+    animation: fadeIn 2s;      /* Animação de 2 segundos */
+}
+
+/* Definição da animação fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0.3 }      /* Começa quase transparente */
+    to { opacity: 1 }          /* Termina totalmente opaco */
+}
+
+/* Efeito visual para notícias inativas */
+.noticia:not(.ativa) {
+    filter: blur(4px);         /* Desfoque para não enfatizar */
+    opacity: 0.5;              /* Transparência para reduzir destaque */
+}
+
+/* Botões de navegação anterior e próxima */
+.anterior, .proxima {
+    position: absolute;        /* Posicionamento absoluto sobre o carrossel */
+    top: 40%;                  /* Posicionamento vertical a 40% do topo */
+    transform: translateY(-50%); /* Ajuste fino para centralização vertical */
+    background-color: transparent; /* Fundo transparente */
+    color: #2C2C2C;            /* Cor cinza escuro */
+    border: none;              /* Sem borda */
+    cursor: pointer;           /* Cursor pointer para indicar ação */
+    z-index: 1000;             /* Camada acima do conteúdo */
+    font-size: 2rem;           /* Tamanho grande para visibilidade */
+    width: auto;
+    padding-inline: 10px;      /* Padding horizontal */
+    border-radius: 3px;        /* Cantos levemente arredondados */
+}
+
+/* Efeito hover para botões de navegação */
+.anterior:hover, .proxima:hover {
+    color: #767676;            /* Muda para cinza médio ao passar mouse */
+}
+
+/* Container dos indicadores (pontos) de navegação */
+.noticiasindicadores {
+    position: absolute;        /* Posicionamento absoluto sobre o carrossel */
+    left: 50%;                 /* Centralização horizontal */
+    transform: translateX(-50%); /* Ajuste fino para centralização exata */
+    z-index: 100;              /* Camada acima do carrossel */
+    margin: 0;
+}
+
+/* Ponto individual de indicador */
+.noticiasindicadores .apontarnoticia {
+    display: inline-block;     /* Exibição em linha */
+    width: 12px;               /* Largura fixa */
+    height: 12px;              /* Altura fixa */
+    margin: 0 5px;             /* Espaço entre pontos */
+    background-color: #2C2C2C; /* Cor cinza escuro (inativo) */
+    border-radius: 50%;        /* Forma circular */
+    cursor: pointer;           /* Cursor pointer para indicar ação */
+}
+
+/* Ponto ativo (indicando slide atual) */
+.noticiasindicadores .apontarnoticia.ativa {
+    background-color: #767676; /* Cor cinza médio (ativo) */
+}
+
+/* Rodapé da página */
+footer {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;    /* Organização vertical */
+    align-items: center;       /* Centralização horizontal */
+    text-align: center;        /* Texto centralizado */
+    border-top: 1px solid #767676; /* Linha superior cinza médio */
+}
+
+/* Logo no rodapé */
+.logofooter {
+    margin-top: 8px;           /* Espaço acima da logo */
+    margin-bottom: 30px;       /* Espaço abaixo da logo */
+}
+
+/* Efeito hover para links das redes sociais */
+.redessociais ul li a:hover {
+    background-color: #D7D7D7; /* Fundo cinza claro ao passar mouse */
+    box-shadow: 0 0 0 1rem #D7D7D7; /* Expansão visual do fundo */
+    border-radius: 5px;        /* Cantos arredondados */
+}
+
+/* ================================================================
+   MEDIA QUERIES PARA RESPONSIVIDADE
+   ================================================================ */
+
+/* Dispositivos com largura máxima de 910px (mobile e tablets pequenos) */
+@media (max-width: 910px) {
+    /* Oculta elementos em telas pequenas para economizar espaço */
+    header img, .equipe aside, .noticia img {
+        display: none;
+    }
+
+    /* Cabeçalho em coluna para mobile */
+    header {
+        flex-direction: column; /* Organização vertical */
+        gap: 20px;              /* Espaço entre elementos */
+        text-align: center;
+        padding: 30px;
+    }
+ 
+    /* Aumenta tamanho da fonte do menu em mobile */
+    .menu ul li {
+        font-size: large;
+    }
+
+    /* Ajusta seção hero para mobile */
+    .propulsores {
+        padding: 9%;            /* Padding reduzido */
+        font-size: 270%;        /* Tamanho de fonte reduzido */
+    }
+
+    /* Ajusta seção de newsletter para mobile */
+    .newsletter {
+        padding: 1px;           /* Padding mínimo */
+        margin-bottom: 20px;
+    }
+
+    /* Ajustes de margem para título da newsletter */
+    .newsletter h2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* Reduz padding em seções para mobile */
+    .equipe, .noticias {
+        padding: 30px;
+    }
+
+    /* Ajusta carrossel para mobile */
+    .roldenoticias {
+        max-width: 100%;        /* Ocupa toda a largura disponível */
+        height: auto;           /* Altura automática */
+    }
+
+    /* Reduz padding das notícias */
+    .noticia {
+        padding: 2%;
+    }
+
+    /* Reduz tamanho das setas de navegação */
+    .anterior, .proxima {
+        font-size: 1.5rem;
+    }
+
+    /* Posiciona seta anterior mais à esquerda */
+    .anterior {
+        left: -30px;
+    }
+
+    /* Posiciona seta próxima mais à direita */
+    .proxima {
+        right: -30px;
+    }
+}
+
+/* Tablets médios (911px a 1335px) */
+@media (min-width: 911px) and (max-width: 1335px) {
+    /* Padding reduzido para tablets */
+    .equipe, .noticias {
+        padding: 40px;
+    }
+
+    /* Ajustes de largura e alinhamento do carrossel */
+    .roldenoticias, .girarnoticias {
+        width: 100% !important;
+        height: auto !important;
+        justify-content: center !important;
+        display: flex !important;
+    }
+
+    /* Ajuste de posição das setas */
+    .anterior {
+        left: -35px !important;
+    }
+
+    .proxima {
+        right: -35px !important;
+    }
+}
+
+/* Telas a partir de 801px (tablets grandes e desktop) */
+@media (min-width: 801px) {
+    /* Centralização do carrossel */
+    .girarnoticias {
+        justify-content: center !important;
+    }
+
+    /* Margens automáticas para notícia ativa */
+    .noticia.ativa {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Ajuste de largura para exibir 2 notícias por linha */
+    .noticia {
+        flex: 0 0 50% !important;   /* Ocupa 50% da largura */
+        max-width: 70% !important;   /* Largura máxima de 70% */
+    }
+}
+
+/* Telas a partir de 1025px (desktop grande) */
+@media (min-width: 1025px) {
+    /* Ajusta posição das setas para telas maiores */
+    .anterior {
+        left: -45px;
+    }
+
+    .proxima {
+        right: -45px;
+    }
+}

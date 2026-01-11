@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+  Página principal da G&P Agência Espacial (versão legada)
+  Local: legacy/index.html
+  Características: HTML5 semântico, estrutura responsiva, integração com JavaScript
+-->
+<html lang="pt-br">
+<!-- Define o idioma da página como português brasileiro para acessibilidade e SEO -->
+
+<head>
+    <!-- Meta tags essenciais para configuração da página -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 para suporte a acentos e caracteres especiais -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura viewport para responsividade em dispositivos móveis -->
+    
+    <meta name="description" content="Agência Espacial da G&P, ainda em construção então é puramente acadêmico.">
+    <!-- Descrição para SEO e preview em redes sociais -->
+    
+    <title>G&P Agência Espacial</title>
+    <!-- Título da página exibido na aba do navegador -->
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Link para o arquivo CSS de estilos -->
+    
+    <link rel="shortcut icon" href="../src/assets/Imagens/favicon.ico">
+    <!-- Ícone favorito (favicon) exibido na aba do navegador -->
+</head>
+
+<body>
+    <!-- Cabeçalho principal com logo, menu de navegação e área do usuário -->
+    <header>
+        <!-- Logo da empresa -->
+        <img src="../src/assets/Imagens/Logo.png" alt="Logotipo G&P Agência Espacial">
+
+        <!-- Menu principal de navegação -->
+        <nav class="menu">
+            <ul>
+                <!-- Cada item do menu chama a função construcao() que exibe modal de "em construção" -->
+                <li><a id="preco" onclick="construcao()">Preço</a></li>
+                <li><a id="solucao" onclick="construcao()">Solução</a></li>
+                <li><a id="comunidade" onclick="construcao()">Comunidade</a></li>
+                <li><a id="sobre" onclick="construcao()">Sobre nós</a></li>
+            </ul>
+        </nav>
+
+        <!-- Área de ações do usuário (login e cadastro) -->
+        <nav class="usuario">
+            <ul>
+                <!-- Botões que também chamam a função construcao() para funcionalidades futuras -->
+                <li><button type="button" id="login" onclick="construcao()">Login</button></li>
+                <li><button type="button" id="cadastrar" onclick="construcao()">Cadastrar</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Seção hero com imagem de fundo e slogan -->
+        <section class="propulsores">
+            Fabricação de propulsores para grandes empresas espaciais.
+        </section>
+
+        <!-- Seção de newsletter para captação de emails -->
+        <section class="newsletter">
+            <h2>Receba as novidades sobre G&P Agência Espacial</h2>
+            <!-- Formulário com validação JavaScript -->
+            <form name="newsletter" id="newsletter" novalidate>
+                <!-- Campo de email com placeholder exemplificativo -->
+                <input type="email" placeholder="email@exemplo.com" class="email" name="email" id="email">
+                <!-- Botão de envio que aciona a validação JavaScript -->
+                <button type="submit" id="enviar">Enviar</button>
+                <!-- Modal de alerta (inicialmente oculto) para feedback ao usuário -->
+                <div id="fundoalerta" class="fundoalerta">
+                    <div class="alerta">
+                        <p class="aviso"></p>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Seção sobre a equipe da empresa -->
+        <section class="equipe">
+            <div class="texto">
+                <h3>Nossa Equipe</h3>            
+                <p>
+                    Nossa equipe é composta por profissionais dedicados e apaixonados pelo que fazem. Cada membro traz uma combinação única de habilidades e experiências que se 
+                    complementam, formando um time forte e coeso. Valorizamos a colaboração, a inovação e o compromisso com a excelência em tudo o que fazemos. Juntos, enfrentamos 
+                    desafios com criatividade e perseverança, sempre focados em alcançar os melhores resultados para nossos clientes e parceiros. Acreditamos que o sucesso é 
+                    construído a partir de um trabalho em equipe sólido, onde cada voz é ouvida e cada ideia é valorizada. Estamos aqui para crescer juntos e fazer a diferença!
+                </p>
+            </div>
+            <!-- Imagem ilustrativa da equipe -->
+            <aside><img src="../src/assets/Imagens/Imagem.png" alt="Foto ilustrativa"></aside>                    
+        </section>
+        
+        <!-- Seção de notícias com carrossel interativo -->
+        <section class="noticias">
+            <h3 class="noticiastitulo">Notícias</h3>
+            <!-- Container principal do carrossel -->
+            <div class="paineldenoticias">            
+              <!-- Área de rolagem horizontal do carrossel -->
+              <div class="roldenoticias">
+                <!-- Container interno que realiza a transição entre slides -->
+                <div class="girarnoticias">
+                  <!-- Notícia 1: Foguetes -->
+                  <figure class="noticia ativa">
+                    <img src="../src/assets/Imagens/Image.png" alt="Foguete">
+                    <figcaption>
+                      <h3>Foguetes</h3>
+                      Um dos nossos foguetes conseguiu entrar em órbita sob a Terra.
+                    </figcaption>
+                  </figure>
+
+                  <!-- Notícia 2: Mecânicos -->
+                  <figure class="noticia">
+                    <img src="../src/assets/Imagens/Image-1.png" alt="Mecânico">
+                    <figcaption>
+                      <h3>Nossos mecânicos</h3>
+                      Nossos mecânicos fazem o melhor para manter os motores funcionando durante os testes.
+                    </figcaption>
+                  </figure>
+
+                  <!-- Notícia 3: Agência Espacial -->
+                  <figure class="noticia">
+                    <img src="../src/assets/Imagens/Image-2.png" alt="G&P Agência Espacial">
+                    <figcaption>
+                      <h3>Agência Espacial</h3>
+                      Junte-se conosco nesta viagem ao infinito e além.
+                    </figcaption>
+                  </figure>
+
+                  <!-- Notícia 4: História da Física -->
+                  <figure class="noticia">
+                    <img src="../src/assets/Imagens/Image-3.png" alt="Física">
+                    <figcaption>
+                      <h3>História da Física</h3>
+                      Isaac Newton (1642-1727) foi um físico e matemático britânico, conhecido por formular as leis do movimento e da gravitação universal.
+                      <!-- Link para mais informações (funcionalidade em construção) -->
+                      <a id="fisica" onclick="construcao()">Sobre mais...</a>
+                    </figcaption>
+                  </figure>
+
+                  <!-- Notícia 5: O Espaço -->
+                  <figure class="noticia">
+                    <img src="../src/assets/Imagens/Image-4.png" alt="Espaço">
+                    <figcaption>
+                      <h3>O Espaço</h3>
+                      O Espaço, como tudo nesse mundo é perfeito...
+                      <!-- Link para mais informações (funcionalidade em construção) -->
+                      <a id="espaco" onclick="construcao()">Sobre mais...</a>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <!-- Controles de navegação do carrossel -->
+              <button class="anterior">&#10094;</button>
+              <button class="proxima">&#10095;</button>
+              
+              <!-- Indicadores visuais (pontos) para navegação direta -->
+              <div class="noticiasindicadores">
+                <!-- Cada span representa uma notícia, com data-index para navegação programática -->
+                <span class="apontarnoticia ativa" data-index="0"></span>
+                <span class="apontarnoticia" data-index="1"></span>
+                <span class="apontarnoticia" data-index="2"></span>
+                <span class="apontarnoticia" data-index="3"></span>
+                <span class="apontarnoticia" data-index="4"></span>
+              </div>
+            </div>
+          </section>
+
+    <!-- Rodapé com logo e links para redes sociais -->
+    <footer>
+        <img src="../src/assets/Imagens/Logo.png" alt="Logotipo G&P Agência Espacial" class="logofooter">
+        
+        <!-- Navegação para redes sociais -->
+        <nav class="redessociais">
+            <ul>
+                <!-- X (Twitter) - em construção -->
+                <li><a onclick="construcao()"><img src="../src/assets/Imagens/X Logo.png" alt="X"></a></li>
+                <!-- Instagram - link externo com target="_blank" -->
+                <li><a href="https://www.instagram.com/gepprojetosesistemas" target="_blank" aria-label="Instagram"><img src="../src/assets/Imagens/Logo Instagram.png" alt="Instagram"></a></li>
+                <!-- YouTube - link externo com target="_blank" -->
+                <li><a href="https://www.youtube.com/GPProjetoseSistemas" target="_blank" aria-label="YouTube"><img src="../src/assets/Imagens/Logo YouTube.png" alt="YouTube"></a></li>
+                <!-- LinkedIn - link externo com target="_blank" -->
+                <li><a href="https://www.linkedin.com/company/g&p" target="_blank" aria-label="LinkedIn"><img src="../src/assets/Imagens/Logo LinkedIn.png" alt="LinkedIn"></a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- Inclusão do arquivo JavaScript com funcionalidades da página -->
+    <script src="script.js"></script>
+
+</body>
+</html>
