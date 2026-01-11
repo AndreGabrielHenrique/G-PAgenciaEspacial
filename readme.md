@@ -7,7 +7,8 @@
 - Vocês irão deixar o código semântico.
 
 - Vocês vão tentar tirar a maior nota que conseguirem.
-## Resumo do projeto (Português)
+
+## Resumo do projeto
 
 Este repositório contém um site informativo em React + Vite que simula uma página institucional chamada "G&P Agência Espacial". O projeto é composto por componentes React organizados em `src/components`, hooks customizados em `src/hooks`, estilos em Sass dentro de `src/styles` e recursos de imagem em `src/assets/Imagens`.
 
@@ -16,4 +17,4 @@ Pontos principais:
 - Comportamentos interativos: carrossel de notícias (`useNoticiasCarousel`), formulário de newsletter com validação (`useSendNewsletter`) e alerta global controlado por `Alert` via `window.alerta`.
 - Build e desenvolvimento com Vite (`npm run dev`, `npm run build`).
 
-Consulte `docs/PROJECT_DOCUMENTATION_PT.md` para documentação completa em Português e `docs/PROJECT_DOCUMENTATION_PT.pdf` para a versão em PDF.
+Consulte `docs/PROJECT_DOCUMENTATION_PT.pdf` para documentação completa.
