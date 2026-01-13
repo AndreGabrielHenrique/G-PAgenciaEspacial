@@ -85,7 +85,7 @@ header {
     font-size: 350%;           /* Texto muito grande para impacto visual */
     font-weight: bold;         /* Negrito para destaque */
     color: white;              /* Texto branco sobre imagem */
-    background-image: url('Imagens/Fundo%20section.png'); /* Imagem de fundo espacial */
+    background-image: url('/legacy/Imagens/Fundo%20section.png'); /* Imagem de fundo espacial */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Não repete a imagem */
     background-size: cover;    /* Cobre toda a área disponível */
